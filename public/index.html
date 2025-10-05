@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日南レモン生産組合 | 太陽の恵み「ひなたのチカラ」で育てた特別なマイヤーレモン</title>
+    <meta name="description" content="宮崎県日南市の温暖な気候と豊かな自然環境で育った「マイヤーレモン」。皮まで安心して食べられる安全性と、まろやかな酸味とフルーティーな香りが特徴の日南レモンをお届けします。">
+    <meta name="keywords" content="日南レモン,マイヤーレモン,宮崎県,日南市,有機栽培,減農薬,皮まで食べられる">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="日南レモン生産組合 | 太陽の恵み「ひなたのチカラ」で育てた特別なマイヤーレモン">
+    <meta property="og:description" content="宮崎県日南市の温暖な気候と豊かな自然環境で育った「マイヤーレモン」">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1590005354167-6da97870c757?w=1200&q=80">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon001.png" type="image/png">
+    <link rel="icon" href="assets/images/favicon001.png" sizes="any">
+    <link rel="apple-touch-icon" href="assets/images/favicon001.png">
+    <meta name="msapplication-TileColor" content="#FEF3C7">
+    <meta name="theme-color" content="#FACC15">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS v4.1 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                        'noto': ['Noto Sans JP', 'sans-serif']
+                    },
+                    colors: {
+                        'warm': {
+                            50: '#fff8f1',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12'
+                        },
+                        'lemon': {
+                            50: '#fffdf0',
+                            100: '#fffce1',
+                            200: '#fff7c7',
+                            300: '#ffeb9e',
+                            400: '#ffdb6b',
+                            500: '#ffc832',
+                            600: '#eab308',
+                            700: '#ca8a04',
+                            800: '#a16207',
+                            900: '#854d0e'
+                        }
+                    },
+                    backdropBlur: {
+                        xs: '2px'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Animate.css v4.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- AOS v2.3 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Lucide v0.536.0 -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        /* カスタムスタイル */
+        .nav-glass {
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-transparent {
+            background-color: transparent;
+            border-bottom: none;
+        }
+
+
+        .card-glass {
+            backdrop-filter: blur(16px);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .modal-backdrop {
+            backdrop-filter: blur(8px);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* モーダルのスクロール対応 */
+        .modal-container {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        /* スクロールバーのスタイル */
+        .modal-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .modal-container::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .modal-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* スムーズアニメーション - パフォーマンス最適化のため特定プロパティのみに適用 */
+        a, button, .ios-button, nav {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 温かいグラデーションボタン */
+        .ios-button {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #fb923c 100%);
+            border-radius: 12px;
+            padding: 12px 24px;
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transform: translateY(0);
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
+        }
+
+        .ios-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.5);
+            background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+        }
+
+        .ios-button:active {
+            transform: translateY(0);
+        }
+
+        /* セーフエリア対応 */
+        .safe-area-top {
+            padding-top: env(safe-area-inset-top);
+        }
+
+        .safe-area-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        /* レスポンシブ画像 */
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 商品画像の統一スタイル */
+        .product-image {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 10px 40px rgba(249, 115, 22, 0.2);
+        }
+
+        .product-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 50px rgba(249, 115, 22, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* 温かいグラデーション背景 */
+        .warm-gradient {
+            background: linear-gradient(135deg, #fff8f1 0%, #ffedd5 50%, #fed7aa 100%);
+        }
+
+        .warm-section {
+            background: linear-gradient(180deg, #fff8f1 0%, #ffedd5 100%);
+        }
+
+        /* 秋らしいヒーローオーバーレイ */
+        .autumn-overlay {
+            background: linear-gradient(135deg,
+                rgba(139, 69, 19, 0.3) 0%,
+                rgba(160, 82, 45, 0.4) 25%,
+                rgba(210, 105, 30, 0.3) 50%,
+                rgba(255, 140, 0, 0.2) 75%,
+                rgba(255, 165, 0, 0.1) 100%);
+        }
+
+        /* 秋の温かいテキストグラデーション */
+        .autumn-text {
+            background: linear-gradient(135deg, #ff8c00 0%, #ffa500 50%, #ffb347 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* シンプルなスケールアニメーション (80% → 100%) */
+        @keyframes scaleUp {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* 全画像にスケールアニメーション適用（2秒） */
+        img.product-image,
+        img.responsive-image,
+        img.news-image,
+        img.recipe-image {
+            animation: scaleUp 2s ease-out both !important;
+        }
+
+        /* data-aos属性を持つ親要素内の画像も対象 */
+        [data-aos] img.product-image,
+        [data-aos] img.responsive-image,
+        [data-aos] img.news-image,
+        [data-aos] img.recipe-image {
+            animation: scaleUp 2s ease-out both !important;
+        }
+
+        /* 商品セクションの画像を明示的に指定 */
+        #products img.product-image {
+            animation: scaleUp 2s ease-out both !important;
+        }
+
+        /* overflow-hidden内でのスケール対応 - 親要素のoverflowを一時的に調整 */
+        .card-glass.rounded-2xl.overflow-hidden {
+            overflow: visible;
+        }
+
+        /* アニメーション完了後にoverflowを戻す（2秒に合わせる） */
+        .card-glass.rounded-2xl {
+            animation: resetOverflow 2s ease-out both;
+        }
+
+        @keyframes resetOverflow {
+            0%, 99% {
+                overflow: visible;
+            }
+            100% {
+                overflow: hidden;
+            }
+        }
+
+        /* レシピセクション・ニュースセクションの「レシピを見る →」「詳しく見る →」「オンラインショップへ →」にホバー時のアンダーライン */
+        #recipes button.text-warm-600,
+        #news button.text-warm-600,
+        #news a.text-warm-600 {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        #recipes button.text-warm-600::after,
+        #news button.text-warm-600::after,
+        #news a.text-warm-600::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: currentColor;
+            transition: width 0.3s ease-out;
+        }
+
+        #recipes button.text-warm-600:hover::after,
+        #news button.text-warm-600:hover::after,
+        #news a.text-warm-600:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="font-noto text-gray-900 bg-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 nav-transparent safe-area-top">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/images/Header001.png" alt="日南レモン生産管理組合ロゴ" class="w-16 h-10">
+                    <span class="font-inter font-black text-xl text-white" id="logo-text" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8);">日南レモン生産管理組合</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#hero" class="text-white hover:text-orange-300 font-semibold transition-colors" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6);">ホーム</a>
+                    <a href="#products" class="text-white hover:text-orange-300 font-semibold transition-colors" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6);">商品</a>
+                    <a href="#news" class="text-white hover:text-orange-300 font-semibold transition-colors" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6);">ニュース</a>
+                    <a href="#about" class="text-white hover:text-orange-300 font-semibold transition-colors" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6);">特徴</a>
+                    <a href="#cultivation" class="text-white hover:text-orange-300 font-semibold transition-colors" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6);">栽培</a>
+                    <a href="#recipes" class="text-white hover:text-orange-300 font-semibold transition-colors" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6);">レシピ</a>
+                    <a href="#organization" class="text-white hover:text-orange-300 font-semibold transition-colors" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6);">生産組合</a>
+                    <a href="#sustainability" class="text-white hover:text-orange-300 font-semibold transition-colors" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6);">持続可能</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6);">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden card-glass rounded-lg mt-2 p-6">
+                <div class="flex flex-col space-y-4">
+                    <a href="#hero" class="text-gray-900 hover:text-warm-600 font-medium py-2">ホーム</a>
+                    <a href="#products" class="text-gray-900 hover:text-warm-600 font-medium py-2">商品</a>
+                    <a href="#news" class="text-gray-900 hover:text-warm-600 font-medium py-2">ニュース</a>
+                    <a href="#about" class="text-gray-900 hover:text-warm-600 font-medium py-2">特徴</a>
+                    <a href="#cultivation" class="text-gray-900 hover:text-warm-600 font-medium py-2">栽培</a>
+                    <a href="#recipes" class="text-gray-900 hover:text-warm-600 font-medium py-2">レシピ</a>
+                    <a href="#organization" class="text-gray-900 hover:text-warm-600 font-medium py-2">生産組合</a>
+                    <a href="#sustainability" class="text-gray-900 hover:text-warm-600 font-medium py-2">持続可能</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/KeyVisual002.jpg');"></div>
+
+        <!-- Autumn warm overlay for better text readability -->
+        <div class="absolute inset-0 autumn-overlay"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h1 class="font-inter font-bold text-4xl sm:text-6xl lg:text-7xl text-orange-50 mb-8 animate__animated animate__fadeInUp" style="text-shadow: 2px 2px 6px rgba(139, 69, 19, 0.8);">
+                太陽の恵み<br>
+                <span class="text-amber-200 font-bold text-5xl sm:text-7xl lg:text-8xl" style="text-shadow: 3px 3px 8px rgba(139, 69, 19, 0.9); letter-spacing: 0.05em;">日南レモン</span>
+            </h1>
+            <p class="font-noto text-xl sm:text-2xl text-orange-50 mb-12 animate__animated animate__fadeInUp animate__delay-1s max-w-3xl mx-auto" style="text-shadow: 1px 1px 4px rgba(139, 69, 19, 0.7);">
+                宮崎県日南市の温暖な気候と豊かな自然環境で育った<br class="hidden sm:block">特別なマイヤーレモンをお届けします
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-6 justify-center animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="ios-button text-lg px-8 py-4 shadow-xl text-center">
+                    オンラインショップ
+                </a>
+                <a href="#about" class="border-2 border-orange-200 text-orange-100 px-8 py-4 rounded-xl font-semibold hover:bg-orange-100 hover:text-orange-900 transition-all shadow-lg backdrop-blur-sm" style="text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.7);">
+                    詳しく見る
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-orange-100 animate-bounce" style="filter: drop-shadow(1px 1px 2px rgba(139, 69, 19, 0.6));">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    商品ラインナップ
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    爽やかな酸味と青い香り、グリーンレモンの季節到来！<br>
+                    完熟前だからこそ味わえる、キリッとした酸っぱさと清々しい香り。<br>
+                    今しか楽しめない旬の美味しさを、お料理やドリンクでお楽しみください。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <!-- グリーンレモン -->
+                <div class="card-glass rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative mb-8">
+                        <img src="assets/images/GreenLemon001.jpg"
+                             alt="日南の新鮮なグリーンレモン - 手のひらに収まる美しい緑色の果実"
+                             class="product-image"
+                             loading="lazy"
+                             decoding="async">
+                        <!-- 今が旬バッジ（画像上） -->
+                        <img src="assets/images/mainimage001.png"
+                             alt="今が旬！"
+                             class="absolute bottom-4 left-4 w-96 h-auto z-10 drop-shadow-lg"
+                             loading="lazy"
+                             decoding="async">
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <h3 class="font-inter font-bold text-2xl text-gray-900">グリーンレモン</h3>
+                        <img src="assets/images/mainimage001.png"
+                             alt="今が旬！"
+                             class="ml-4 h-8 w-auto drop-shadow-lg"
+                             loading="lazy"
+                             decoding="async">
+                    </div>
+                    <p class="text-gray-600 mb-4">９月下旬から11月始め頃に収穫されるグリーンレモンは、爽やかで青々しい香り、やや強めの酸味が特徴。果汁はイエローレモンに比べて多くありませんので、料理のアクセントに最適です。</p>
+                    <div class="flex items-center text-warm-600 mb-6">
+                        <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
+                        <span class="font-medium">出荷時期：９月下旬から11月始め頃</span>
+                        <img src="assets/images/mainimage001.png"
+                             alt="今が旬！"
+                             class="ml-2 h-6 w-auto"
+                             loading="lazy"
+                             decoding="async">
+                    </div>
+                    <div class="space-y-3">
+                        <button onclick="openModal('product-modal')" class="ios-button w-full">
+                            詳細を見る
+                        </button>
+                        <a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="block w-full px-4 py-3 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-xl transition-colors shadow-lg text-center">
+                            オンラインショップはこちら
+                        </a>
+                    </div>
+                </div>
+
+                <!-- イエローレモン -->
+                <div class="card-glass rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/images/YellowLemon001.jpg"
+                         alt="日南の完熟イエローレモン - 黄金色に輝く美しい果実"
+                         class="product-image mb-8"
+                         loading="lazy"
+                         decoding="async">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900 mb-4">イエローレモン</h3>
+                    <p class="text-gray-600 mb-4">12月頃から１月頃に収穫されるイエローレモンは、まろやかな酸味と甘い香りが特徴。デザートやドリンクにおすすめです。収穫されたレモンは、冷蔵保管されたものは、５月一杯販売されます。</p>
+                    <div class="flex items-center text-warm-600 mb-6">
+                        <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
+                        <span class="font-medium">出荷時期：11月頃から４月頃</span>
+                    </div>
+                    <div class="space-y-3">
+                        <button onclick="openModal('yellow-product-modal')" class="ios-button w-full">
+                            詳細を見る
+                        </button>
+                        <button class="w-full px-4 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors shadow-lg">
+                            もうしばらくお待ちください！
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 配送情報 -->
+            <div class="card-glass rounded-2xl p-8 text-center" data-aos="fade-up">
+                <h3 class="font-inter font-bold text-2xl text-gray-900 mb-4">配送について</h3>
+                <div class="text-gray-600 mb-6 space-y-3">
+                    <p>「日南レモン生産組合」で個人向けに販売しているレモンは、基本的に３kg相当の専用ダンボール箱での発送となります。</p>
+                    <p>もし、３kg以外の数量のご希望がございましたら、当ページ内最下段の「お問い合わせフォーム」若しくは、<a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="text-warm-600 hover:text-warm-700 underline">オンラインショップの「お問い合わせフォーム」</a>からお問い合わせください。</p>
+                    <p>グリーンレモンは、注文頂いてからの収穫となります。</p>
+                    <p>お手元に届きましたら、なるべくお早めにお召し上がりください。</p>
+                </div>
+                <div class="flex items-center justify-center space-x-4 text-warm-600">
+                    <i data-lucide="truck" class="w-6 h-6"></i>
+                    <span class="font-medium">全国配送対応<a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="text-warm-600 hover:text-warm-700 underline ml-1">（詳しくはオンラインショップ）</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events Section -->
+    <section id="news" class="py-24 warm-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    ニュース・イベント
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    日南レモンの最新情報やイベントをお知らせします
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Item 1 -->
+                <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="assets/images/GreenLemon004.jpg"
+                             alt="グリーンレモン収穫シーズン"
+                             class="w-full h-48 object-cover news-image"
+                             loading="lazy"
+                             decoding="async">
+                        <div class="absolute top-4 left-4 bg-lemon-500 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                            NEWS
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>2025年9月</span>
+                        </div>
+                        <h4 class="font-inter font-semibold text-xl text-gray-900 mb-3">グリーンレモン収穫開始</h4>
+                        <p class="text-gray-600 mb-4">今年もグリーンレモンの収穫シーズンが到来しました。爽やかな酸味と青々しい香りをお楽しみください。</p>
+                        <button onclick="openModal('news-modal-1')" class="text-warm-600 font-medium hover:text-warm-700">
+                            詳しく見る →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="assets/images/onlineshop001.jpg"
+                             alt="オンラインショップ開店"
+                             class="w-full h-48 object-cover news-image"
+                             loading="lazy"
+                             decoding="async">
+                        <div class="absolute top-4 left-4 bg-warm-500 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                            お知らせ
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>2025年11月25日</span>
+                        </div>
+                        <h4 class="font-inter font-semibold text-xl text-gray-900 mb-3">オンラインショップ開店</h4>
+                        <p class="text-gray-600 mb-4">日南レモンオンラインショップを開店致しました。日南レモンをオンラインで購入できます。全国配送対応してます。</p>
+                        <a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="text-warm-600 font-medium hover:text-warm-700">
+                            オンラインショップへ →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="assets/images/lemonfield001.jpg"
+                             alt="品質管理への取り組み"
+                             class="w-full h-48 object-cover news-image"
+                             loading="lazy"
+                             decoding="async">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                            活動報告
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>通年</span>
+                        </div>
+                        <h4 class="font-inter font-semibold text-xl text-gray-900 mb-3">品質管理への取り組み</h4>
+                        <p class="text-gray-600 mb-4">徹底した記録管理のもと、安心・安全なレモンづくりに取り組んでいます。</p>
+                        <button onclick="openModal('news-modal-3')" class="text-warm-600 font-medium hover:text-warm-700">
+                            詳しく見る →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 warm-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    日南レモンの特徴
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto mb-8"></div>
+                <!-- 上段特徴ボックス -->
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="card-glass rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="50">
+                        <div class="w-16 h-16 bg-lemon-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="citrus" class="w-8 h-8 text-lemon-600"></i>
+                        </div>
+                        <h3 class="font-inter font-semibold text-lg text-gray-900 mb-3">マイヤーレモン</h3>
+                        <p class="text-gray-600 text-sm">一般的なレモンに比べ、酸味がまろやかで、フルーティーな香りが強いのが特徴です</p>
+                    </div>
+
+                    <div class="card-glass rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-lemon-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="award" class="w-8 h-8 text-lemon-600"></i>
+                        </div>
+                        <h3 class="font-inter font-semibold text-lg text-gray-900 mb-3">品質の高さ</h3>
+                        <p class="text-gray-600 text-sm">皮が薄くて果汁が豊富、酸味と香りのバランスが良く、国産レモンならではの安心・安全な品質を誇ります</p>
+                    </div>
+
+                    <div class="card-glass rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="150">
+                        <div class="w-16 h-16 bg-lemon-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="chef-hat" class="w-8 h-8 text-lemon-600"></i>
+                        </div>
+                        <h3 class="font-inter font-semibold text-lg text-gray-900 mb-3">用途の多様性</h3>
+                        <p class="text-gray-600 text-sm">そのまま食べても美味しく、料理や飲み物の調味料としても優秀で、皮まで安心して使用できるのが魅力です</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 特徴グリッド -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <div class="card-glass rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-warm-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-warm-600"></i>
+                    </div>
+                    <h3 class="font-inter font-semibold text-xl text-gray-900 mb-4">皮まで安全</h3>
+                    <p class="text-gray-600">皮が薄く、苦みが少ないため、皮ごとお料理やお菓子作りにお使いいただけます</p>
+                </div>
+
+                <div class="card-glass rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-warm-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="heart" class="w-8 h-8 text-warm-600"></i>
+                    </div>
+                    <h3 class="font-inter font-semibold text-xl text-gray-900 mb-4">まろやかな酸味</h3>
+                    <p class="text-gray-600">通常のレモンより甘い香りと、まろやかな酸味が特徴的です</p>
+                </div>
+
+                <div class="card-glass rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-warm-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="leaf" class="w-8 h-8 text-warm-600"></i>
+                    </div>
+                    <h3 class="font-inter font-semibold text-xl text-gray-900 mb-4">持続可能な栽培</h3>
+                    <p class="text-gray-600">標準栽培、減農薬栽培、有機栽培、農薬不使用栽培を実践しています</p>
+                </div>
+            </div>
+
+            <!-- 環境セクション -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="assets/images/GreenLemon003.jpg"
+                         alt="日南市の美しい風景 - 海と山に囲まれた豊かな自然環境"
+                         class="responsive-image"
+                         loading="lazy"
+                         decoding="async">
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="font-inter font-bold text-3xl text-gray-900 mb-6">
+                        恵まれた環境
+                    </h3>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        日南市は年間を通じて温暖な気候に恵まれ、太陽の光をたっぷりと浴びてレモンが育ちます。海と山に囲まれた豊かな自然環境が、日南レモン特有の深い味わいと香りを育んでいます。
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-warm-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-4 h-4 text-gray-900"></i>
+                            </div>
+                            <span class="text-gray-700">温暖な気候と豊富な日照時間</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-warm-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-4 h-4 text-gray-900"></i>
+                            </div>
+                            <span class="text-gray-700">海からの潮風と山からの清らかな水</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-warm-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-4 h-4 text-gray-900"></i>
+                            </div>
+                            <span class="text-gray-700">徹底した品質管理と履歴管理</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Cultivation Section -->
+    <section id="cultivation" class="py-24 warm-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    栽培へのこだわり
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    日南レモン生産組合では、徹底した記録管理のもと、安心・安全なレモンづくりに取り組んでいます
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div data-aos="fade-right">
+                    <h3 class="font-inter font-bold text-3xl text-gray-900 mb-6">
+                        品質管理システム
+                    </h3>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        全生産者が農薬や肥料の使用履歴を記録する「防除暦」を作成・保管し、栽培工程を追跡・確認できる履歴管理システムで安全を確保しています。
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clipboard-check" class="w-6 h-6 text-warm-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900 mb-2">防除暦の作成・保管</h4>
+                                <p class="text-gray-600">農薬や肥料の使用履歴を詳細に記録</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="search" class="w-6 h-6 text-warm-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900 mb-2">トレーサビリティ</h4>
+                                <p class="text-gray-600">栽培工程を追跡・確認できるシステム</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="assets/images/lemonfield001.jpg"
+                         alt="日南レモン農園の風景 - 緑豊かなレモン畑"
+                         class="responsive-image"
+                         loading="lazy"
+                         decoding="async">
+                    <p class="text-xs text-gray-500 mt-2">（森山農園：森山泰組合員の園地の様子です。）</p>
+                </div>
+            </div>
+
+            <!-- 栽培方法 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up">
+                <div class="card-glass rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="sprout" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-lg text-gray-900 mb-2">標準栽培</h4>
+                    <p class="text-gray-600 text-sm mb-3">基本的な栽培方法</p>
+                    <button onclick="openModal('standard-cultivation-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline">
+                        詳しくはこちら →
+                    </button>
+                </div>
+                <div class="card-glass rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="shield" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-lg text-gray-900 mb-2">減農薬栽培</h4>
+                    <p class="text-gray-600 text-sm mb-3">農薬使用を最小限に</p>
+                    <button onclick="openModal('reduced-pesticide-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline">
+                        詳しくはこちら →
+                    </button>
+                </div>
+                <div class="card-glass rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="leaf" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-lg text-gray-900 mb-2">有機栽培</h4>
+                    <p class="text-gray-600 text-sm mb-3">有機認証基準に準拠</p>
+                    <button onclick="openModal('organic-cultivation-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline">
+                        詳しくはこちら →
+                    </button>
+                </div>
+                <div class="card-glass rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="heart" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-lg text-gray-900 mb-2">農薬不使用</h4>
+                    <p class="text-gray-600 text-sm mb-3">完全無農薬で安心</p>
+                    <button onclick="openModal('no-pesticide-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline">
+                        詳しくはこちら →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section id="recipes" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    おすすめレシピ
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    皮まで使える日南レモンです　お料理やドリンクをお楽しみください
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&q=80"
+                         alt="グラスの口にレモンスライスが乗ったレモンウォーター"
+                         class="w-full h-48 object-cover recipe-image"
+                         loading="lazy"
+                         decoding="async">
+                    <div class="p-6">
+                        <h4 class="font-inter font-semibold text-xl text-gray-900 mb-3">レモンウォーター</h4>
+                        <p class="text-gray-600 mb-4">爽やかなレモンの香りで一日をスタート</p>
+                        <button onclick="openModal('recipe-modal')" class="text-warm-600 font-medium hover:text-warm-700">
+                            レシピを見る →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80"
+                         alt="美味しそうなレモンケーキ"
+                         class="w-full h-48 object-cover recipe-image"
+                         loading="lazy"
+                         decoding="async">
+                    <div class="p-6">
+                        <h4 class="font-inter font-semibold text-xl text-gray-900 mb-3">レモンケーキ</h4>
+                        <p class="text-gray-600 mb-4">皮ごと使ったしっとりケーキ</p>
+                        <button onclick="openModal('recipe-modal')" class="text-warm-600 font-medium hover:text-warm-700">
+                            レシピを見る →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&q=80"
+                         alt="さっぱりレモンチキン"
+                         class="w-full h-48 object-cover recipe-image"
+                         loading="lazy"
+                         decoding="async">
+                    <div class="p-6">
+                        <h4 class="font-inter font-semibold text-xl text-gray-900 mb-3">レモンチキン</h4>
+                        <p class="text-gray-600 mb-4">さっぱりとした味わいのメイン料理</p>
+                        <button onclick="openModal('recipe-modal')" class="text-warm-600 font-medium hover:text-warm-700">
+                            レシピを見る →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organization Section -->
+    <section id="organization" class="py-24 warm-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    生産組合について
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto mb-8"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <a href="https://youtu.be/1g32xYfmrag" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/images/JapaneseSunshine01.jpg"
+                             alt="レモン農園で作業する農家の風景"
+                             class="responsive-image"
+                             loading="lazy"
+                             decoding="async">
+                    </a>
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="font-inter font-bold text-3xl text-gray-900 mb-6">
+                        私たちのこだわり
+                    </h3>
+                    <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="users" class="w-6 h-6 text-lemon-600 flex-shrink-0 mt-1"></i>
+                            <p>
+                                「日南レモン生産組合」は、レモン栽培管理にこだわった生産農家が参集した組織です。
+                            </p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="sun" class="w-6 h-6 text-lemon-600 flex-shrink-0 mt-1"></i>
+                            <p>
+                                太陽の恵み「ひなたのチカラ」で、ゆったりした時間の流れの中で豊かに育てられた日南レモンをお届けしています。
+                            </p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="award" class="w-6 h-6 text-lemon-600 flex-shrink-0 mt-1"></i>
+                            <p>
+                                品質へのこだわりと安心・安全への取り組みを通じて、特別な日南マイヤーレモンを生産しています。
+                            </p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="citrus" class="w-6 h-6 text-lemon-600 flex-shrink-0 mt-1"></i>
+                            <p>
+                                主なレモンの種類は、「マイヤーレモン」「ユーレカレモン」「リスボンレモン」の三種類があります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section id="sustainability" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    持続可能な農業
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    未来の世代のために、環境に配慮した持続可能なレモン栽培に取り組んでいます
+                </p>
+            </div>
+
+            <!-- メインコンテンツ -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right">
+                    <img src="assets/images/environment001.jpg"
+                         alt="持続可能な農業の取り組み - 自然と共生するレモン畑"
+                         class="responsive-image"
+                         loading="lazy"
+                         decoding="async">
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="font-inter font-bold text-3xl text-gray-900 mb-6">
+                        環境との共生
+                    </h3>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        日南レモン生産組合では、環境負荷を最小限に抑えながら、高品質なレモンを生産する持続可能な農業を実践しています。自然の力を最大限に活用し、次世代に豊かな大地を引き継ぐことを使命としています。
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i data-lucide="leaf" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900 mb-1">
+                                    有機肥料の活用
+                                    <button onclick="openModal('organic-fertilizer-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline ml-2">
+                                        (詳しくはこちら)
+                                    </button>
+                                </h4>
+                                <p class="text-gray-600">化学肥料を減らし、堆肥などの有機肥料を積極的に使用しています</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i data-lucide="droplet" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900 mb-1">
+                                    水資源の保護
+                                    <button onclick="openModal('water-resource-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline ml-2">
+                                        (詳しくはこちら)
+                                    </button>
+                                </h4>
+                                <p class="text-gray-600">効率的な灌漑システムで水資源を大切に管理しています</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i data-lucide="recycle" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900 mb-1">
+                                    循環型農業
+                                    <button onclick="openModal('circular-agriculture-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline ml-2">
+                                        (詳しくはこちら)
+                                    </button>
+                                </h4>
+                                <p class="text-gray-600">剪定枝や果実残渣を堆肥化し、畑に還元しています</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 取り組み詳細 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-glass rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="bug-off" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-lg text-gray-900 mb-3">減農薬栽培</h4>
+                    <p class="text-gray-600 text-sm mb-3">必要最小限の農薬使用で、環境と生態系を守ります</p>
+                    <button onclick="openModal('reduced-pesticide-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline">
+                        詳しくはこちら →
+                    </button>
+                </div>
+
+                <div class="card-glass rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="tree-deciduous" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-lg text-gray-900 mb-3">生物多様性</h4>
+                    <p class="text-gray-600 text-sm mb-3">農園周辺の自然環境と生態系の保全に努めています</p>
+                    <button onclick="openModal('biodiversity-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline">
+                        詳しくはこちら →
+                    </button>
+                </div>
+
+                <div class="card-glass rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="sun" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-lg text-gray-900 mb-3">自然エネルギー</h4>
+                    <p class="text-gray-600 text-sm mb-3">太陽光など自然エネルギーの活用を推進しています</p>
+                    <button onclick="openModal('natural-energy-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline">
+                        詳しくはこちら →
+                    </button>
+                </div>
+
+                <div class="card-glass rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="users" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-lg text-gray-900 mb-3">地域との連携</h4>
+                    <p class="text-gray-600 text-sm mb-3">地域コミュニティと協力し、持続可能な農業を実現します</p>
+                    <button onclick="openModal('regional-cooperation-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline">
+                        詳しくはこちら →
+                    </button>
+                </div>
+            </div>
+
+            <!-- SDGs -->
+            <div class="mt-20 text-center" data-aos="fade-up">
+                <div class="card-glass rounded-2xl p-8 max-w-4xl mx-auto">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900 mb-6">SDGsへの貢献</h3>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        私たちの取り組みは、<a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:text-green-600 hover:underline transition-colors font-semibold">国連が定める持続可能な開発目標（SDGs）</a>の達成に貢献しています。
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div class="flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-lg">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-600"></i>
+                            <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/2-hunger/" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 hover:text-green-600 hover:underline transition-colors">目標2: 飢餓をゼロに</a>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-lg">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-600"></i>
+                            <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/12-responsible/" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 hover:text-green-600 hover:underline transition-colors">目標12: つくる責任つかう責任</a>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-lg">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-600"></i>
+                            <a href="https://www.unicef.or.jp/kodomo/sdgs/17goals/15-land/" target="_blank" rel="noopener noreferrer" class="font-medium text-gray-900 hover:text-green-600 hover:underline transition-colors">目標15: 陸の豊かさも守ろう</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- 会社情報 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="assets/images/Header001.png" alt="日南レモン生産管理組合ロゴ" class="w-12 h-8">
+                        <span class="font-inter font-bold text-lg">日南レモン生産組合</span>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                        太陽の恵み「ひなたのチカラ」で育てられた日南レモン。皮まで安心して食べられる特別なマイヤーレモンをお届けします。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-lemon-400 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-lemon-400 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-lemon-400 transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- サイトマップ -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">サイトマップ</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#hero" class="text-gray-300 hover:text-lemon-400 transition-colors">ホーム</a></li>
+                        <li><a href="#products" class="text-gray-300 hover:text-lemon-400 transition-colors">商品ラインナップ</a></li>
+                        <li><a href="#news" class="text-gray-300 hover:text-lemon-400 transition-colors">ニュース・イベント</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-lemon-400 transition-colors">日南レモンの特徴</a></li>
+                        <li><a href="#cultivation" class="text-gray-300 hover:text-lemon-400 transition-colors">栽培へのこだわり</a></li>
+                    </ul>
+                </div>
+
+                <!-- コンテンツ -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">コンテンツ</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#recipes" class="text-gray-300 hover:text-lemon-400 transition-colors">おすすめレシピ</a></li>
+                        <li><a href="#organization" class="text-gray-300 hover:text-lemon-400 transition-colors">生産組合について</a></li>
+                        <li><a href="#sustainability" class="text-gray-300 hover:text-lemon-400 transition-colors">持続可能な農業</a></li>
+                        <li><button onclick="openModal('contact-modal')" class="text-gray-300 hover:text-lemon-400 transition-colors text-left">お問い合わせ</button></li>
+                        <li><a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-lemon-400 transition-colors">オンラインショップ</a></li>
+                    </ul>
+                </div>
+
+                <!-- お問い合わせ -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">お問い合わせ</h3>
+                    <div class="space-y-3 text-sm text-gray-300">
+                        <div class="flex items-start space-x-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-1 flex-shrink-0"></i>
+                            <p>〒889-3155<br>宮崎県日南市大字塚田乙２６２番地</p>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <i data-lucide="building" class="w-4 h-4 mt-1 flex-shrink-0"></i>
+                            <p>日南レモン生産組合</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="w-4 h-4 flex-shrink-0"></i>
+                            <a href="mailto:zimukyoku@nichinanlemon.jp" class="hover:text-lemon-400 transition-colors">zimukyoku@nichinanlemon.jp</a>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <i data-lucide="clock" class="w-4 h-4 mt-1 flex-shrink-0"></i>
+                            <p>平日：9:00-17:00<br>土曜：9:00-15:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 日南レモン生産組合. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- スクロールトップボタン -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 bg-lemon-500 text-white p-3 rounded-full shadow-lg hover:bg-lemon-600 transition-all z-40">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- お問い合わせモーダル -->
+    <div id="contact-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('contact-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-md transform transition-all">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">お問い合わせ</h3>
+                    <button onclick="closeModal('contact-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">お名前</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-warm-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">メールアドレス</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-warm-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">お問い合わせ内容</label>
+                        <textarea name="message" required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-warm-500 focus:border-transparent"></textarea>
+                    </div>
+                    <div class="flex space-x-3 pt-4">
+                        <button type="submit" class="ios-button flex-1">送信</button>
+                        <button type="button" onclick="closeModal('contact-modal')" class="flex-1 px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50">
+                            キャンセル
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 商品詳細モーダル -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('product-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">商品詳細</h3>
+                    <button onclick="closeModal('product-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        「グリーンレモン」は、９月下旬から11月始め頃に収穫される果皮が緑色をした状態を言います。爽やかで青々しい香り、やや強めの酸味が特徴。果汁はイエローレモンに比べて少ないので、料理のアクセントに最適です。
+                    </p>
+                    <p class="text-gray-600">
+                        「レモンの飾り切り」にも、下記のようなものがあり、用途によって使い分けして下さい。
+                    </p>
+
+                    <!-- 飾り切り表 -->
+                    <div class="mt-6">
+                        <table class="w-full border-collapse bg-gray-50 rounded-lg overflow-hidden">
+                            <thead>
+                                <tr class="bg-lemon-100">
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-900">飾り切り名</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-900">特徴</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3 text-gray-700 font-medium">ツイストカット</td>
+                                    <td class="px-4 py-3 text-gray-600">皮付きでねじった形にカット</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3 text-gray-700 font-medium">カルチェカット</td>
+                                    <td class="px-4 py-3 text-gray-600">皮を剥いて果肉だけを切り出す</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="px-4 py-3 text-gray-700 font-medium">星型スライス</td>
+                                    <td class="px-4 py-3 text-gray-600">スライサーで輪切り後、中央を型抜き</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-gray-700 font-medium">フラワーカット</td>
+                                    <td class="px-4 py-3 text-gray-600">薄切りを重ねて花のように盛り付け</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('product-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- レシピモーダル -->
+    <div id="recipe-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('recipe-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">レシピ詳細</h3>
+                    <button onclick="closeModal('recipe-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        日南レモンを使った美味しいレシピをご紹介します。皮まで使えるので、レモンの香りを余すことなくお楽しみいただけます。
+                    </p>
+                    <p class="text-gray-600">
+                        詳しいレシピは、お問い合わせいただければお送りいたします。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('recipe-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ニュースモーダル1 -->
+    <div id="news-modal-1" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('news-modal-1')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">グリーンレモン収穫開始</h3>
+                    <button onclick="closeModal('news-modal-1')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center text-sm text-gray-500 mb-4">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                        <span>2025年9月</span>
+                    </div>
+                    <p class="text-gray-600">
+                        今年もグリーンレモンの収穫シーズンが到来しました。9月下旬から11月始め頃にかけて、爽やかな酸味と青々しい香りが特徴のグリーンレモンをお届けします。
+                    </p>
+                    <p class="text-gray-600">
+                        グリーンレモンは、果皮が緑色の状態で収穫され、やや強めの酸味が料理のアクセントとして最適です。オンラインショップにて販売中です。
+                    </p>
+                    <div class="pt-4 space-y-3">
+                        <a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="block w-full px-4 py-3 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-xl transition-colors shadow-lg text-center">
+                            オンラインショップへ
+                        </a>
+                        <button onclick="closeModal('news-modal-1')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ニュースモーダル3 -->
+    <div id="news-modal-3" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('news-modal-3')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">品質管理への取り組み</h3>
+                    <button onclick="closeModal('news-modal-3')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        日南レモン生産組合では、徹底した記録管理のもと、安心・安全なレモンづくりに取り組んでいます。
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3 p-4 bg-warm-50 rounded-lg">
+                            <i data-lucide="clipboard-check" class="w-5 h-5 text-warm-600 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">防除暦の作成・保管</h4>
+                                <p class="text-sm text-gray-600">全生産者が農薬や肥料の使用履歴を詳細に記録しています。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 p-4 bg-warm-50 rounded-lg">
+                            <i data-lucide="search" class="w-5 h-5 text-warm-600 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">トレーサビリティ</h4>
+                                <p class="text-sm text-gray-600">栽培工程を追跡・確認できるシステムで安全を確保しています。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <button onclick="closeModal('news-modal-3')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- イエローレモン商品詳細モーダル -->
+    <div id="yellow-product-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('yellow-product-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">イエローレモン詳細</h3>
+                    <button onclick="closeModal('yellow-product-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        「イエローレモン」は、12月頃から１月頃に収穫される果皮が黄色くなった完熟状態を言います。まろやかな酸味と甘い香りが特徴で、デザートやドリンクに最適です。
+                    </p>
+                    <p class="text-gray-600">
+                        マイヤーレモンは一般的なレモンに比べて皮が薄く、果汁が豊富で酸味がまろやかなため、皮ごと食べることができます。香りも通常のレモンより甘く上品で、日本では高級柑橘として人気があります。
+                    </p>
+                    <p class="text-gray-600">
+                        収穫されたレモンは冷蔵保管され、５月一杯まで販売されますので、長期間にわたってお楽しみいただけます。
+                    </p>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('yellow-product-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 循環型農業詳細モーダル -->
+    <div id="circular-agriculture-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('circular-agriculture-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">循環型農業について</h3>
+                    <button onclick="closeModal('circular-agriculture-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        循環型農業とは、農業生産で出る廃棄物や副産物を資源として再利用し、環境への負荷を減らしながら持続可能な農業を行う仕組みのことです。
+                    </p>
+                    <p class="text-gray-600 font-semibold">主な循環の仕組み:</p>
+                    <div class="space-y-3">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">農場内での循環</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 家畜の糞尿を堆肥化して畑に還元</li>
+                                <li>• 稲わら、もみ殻などを飼料や堆肥に利用</li>
+                                <li>• 作物残渣を土に戻して土づくり</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">地域内での循環</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 食品工場の副産物(おから、酒かすなど)を飼料・肥料に</li>
+                                <li>• 家庭の生ゴミを堆肥化して農地へ</li>
+                                <li>• 地域の畜産農家と耕種農家の連携</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">エネルギーの循環</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 家畜糞尿からバイオガス発電</li>
+                                <li>• 農業廃棄物を燃料として活用</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <p class="text-gray-700 font-semibold mb-2">従来型農業との違い:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 従来型 = 外部から肥料・飼料を購入、廃棄物は処分</li>
+                            <li>• 循環型 = 地域内で資源を循環させ、廃棄物を最小化</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <p class="text-gray-700 font-semibold mb-2">メリット:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 化学肥料の使用削減</li>
+                            <li>• 廃棄物処理コストの削減</li>
+                            <li>• 環境負荷の軽減</li>
+                            <li>• 資源の有効活用</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600">
+                        循環型農業は、資源を無駄なく使い、環境と調和した持続可能な農業の実現を目指す取り組みです。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('circular-agriculture-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 水資源の保護詳細モーダル -->
+    <div id="water-resource-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('water-resource-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">水資源の保護について</h3>
+                    <button onclick="closeModal('water-resource-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        農業分野での水資源の保護とは、農業に不可欠な水を大切に使い、水質や水量を守りながら持続可能な農業を行うことです。
+                    </p>
+                    <p class="text-gray-600 font-semibold">主な取り組み:</p>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">節水栽培の実施</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 点滴灌漑やスプリンクラーなど効率的な灌水システム</li>
+                                <li>• マルチ栽培による土壌水分の保持</li>
+                                <li>• 水を多く必要としない品種の選択</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">水質汚染の防止</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 化学肥料・農薬の適正使用で河川への流出を防ぐ</li>
+                                <li>• 家畜排泄物の適切な処理</li>
+                                <li>• 農業排水の浄化</li>
+                            </ul>
+                        </div>
+                        <div class="bg-cyan-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">雨水の活用</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 雨水タンクの設置</li>
+                                <li>• ため池の維持管理</li>
+                                <li>• 田んぼの貯水機能の活用</li>
+                            </ul>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">地下水の保全</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 過剰な地下水くみ上げの抑制</li>
+                                <li>• 地下水涵養の促進</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                        <p class="text-gray-700 font-semibold mb-2">重要性:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 農業は水使用量が多い産業(日本の水使用の約7割)</li>
+                            <li>• 水不足や水質悪化は農業生産に直結</li>
+                            <li>• 地域の水循環を守ることで、生態系全体を保護</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600">
+                        水資源の保護は、将来にわたって農業を続けるための基盤であり、環境保全の重要な柱です。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('water-resource-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 有機肥料の活用詳細モーダル -->
+    <div id="organic-fertilizer-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('organic-fertilizer-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">有機肥料の活用について</h3>
+                    <button onclick="closeModal('organic-fertilizer-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        農業分野での有機肥料の活用とは、動植物由来の自然素材を原料とした肥料を使って、土づくりと作物の栄養供給を行うことです。
+                    </p>
+                    <p class="text-gray-600 font-semibold">主な有機肥料の種類:</p>
+                    <div class="space-y-3">
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">動物性有機肥料</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 牛糞、鶏糞、豚糞などの家畜糞堆肥</li>
+                                <li>• 魚粉、骨粉、油かすなど</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">植物性有機肥料</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 米ぬか、大豆かす</li>
+                                <li>• 落ち葉堆肥、緑肥作物</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">その他</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 生ゴミ堆肥</li>
+                                <li>• 木質チップ堆肥</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <p class="text-gray-700 font-semibold mb-2">化学肥料との違い:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 化学肥料 = 速効性があるが、土壌改良効果は限定的</li>
+                            <li>• 有機肥料 = ゆっくり効き、土壌の微生物を増やし土を豊かにする</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <p class="text-gray-700 font-semibold mb-2">メリット:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 土壌の物理性・保水性の改善</li>
+                            <li>• 微生物の活性化による健全な土づくり</li>
+                            <li>• 環境負荷の軽減</li>
+                            <li>• 農業廃棄物の有効活用</li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                        <p class="text-gray-700 font-semibold mb-2">注意点:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 効果が出るまで時間がかかる</li>
+                            <li>• 適切な発酵・熟成が必要</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600">
+                        有機肥料の活用は、持続可能な農業と土壌の長期的な健全性を保つために重要な取り組みです。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('organic-fertilizer-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 地域との連携詳細モーダル -->
+    <div id="regional-cooperation-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('regional-cooperation-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">地域との連携について</h3>
+                    <button onclick="closeModal('regional-cooperation-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        農業分野での地域との連携とは、農家や農業事業者が地域住民・企業・自治体などと協力し合い、共に発展していく取り組みのことです。
+                    </p>
+                    <p class="text-gray-600 font-semibold">主な連携の形:</p>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">地産地消の推進</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 地域で生産した農産物を地域で消費</li>
+                                <li>• 直売所、学校給食、地元飲食店への供給</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">地域住民との交流</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 農業体験イベント、収穫祭の開催</li>
+                                <li>• 農業ボランティアの受け入れ</li>
+                                <li>• 食育活動への参加</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">地域資源の活用</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 地域の堆肥センター利用</li>
+                                <li>• 農業廃棄物の地域内循環</li>
+                                <li>• 地域の伝統的な栽培方法の継承</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">地域経済への貢献</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 雇用創出</li>
+                                <li>• 観光農園による地域活性化</li>
+                                <li>• 地域ブランドの共同開発</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <p class="text-gray-700 font-semibold mb-2">メリット:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 農産物の安定した販路確保</li>
+                            <li>• 地域経済の活性化</li>
+                            <li>• 農業への理解促進</li>
+                            <li>• 持続可能な地域社会の実現</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600">
+                        地域との連携により、農業が孤立せず、地域全体で支え合う仕組みづくりが可能になります。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('regional-cooperation-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自然エネルギー詳細モーダル -->
+    <div id="natural-energy-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('natural-energy-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">自然エネルギーについて</h3>
+                    <button onclick="closeModal('natural-energy-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        農業分野での自然エネルギーとは、太陽光・風力・水力・バイオマスなど、自然界に存在する再生可能なエネルギーを農業に活用することです。
+                    </p>
+                    <p class="text-gray-600 font-semibold">農業での主な活用例:</p>
+                    <div class="space-y-3">
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">太陽光発電</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• ビニールハウスや農地に太陽光パネルを設置</li>
+                                <li>• 営農型太陽光発電(ソーラーシェアリング)で農業と発電を両立</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">バイオマスエネルギー</h4>
+                            <ul class="space-y-1 text-gray-600 text-sm">
+                                <li>• 家畜の糞尿や稲わら、もみ殻などの農業廃棄物を発酵させてガスや電気を生産</li>
+                                <li>• 堆肥化の過程で発生する熱の利用</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">地熱・温泉熱</h4>
+                            <p class="text-gray-600 text-sm">ハウス栽培の加温に利用</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">風力・小水力発電</h4>
+                            <p class="text-gray-600 text-sm">農業用水路や農地での発電</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <p class="text-gray-700 font-semibold mb-2">メリット:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 化石燃料への依存を減らし、環境負荷を軽減</li>
+                            <li>• エネルギーコストの削減</li>
+                            <li>• 農業廃棄物の有効活用</li>
+                            <li>• 持続可能な農業経営の実現</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600">
+                        農業は多くのエネルギーを消費する産業であるため、自然エネルギーの活用は環境保全と経営の両面で重要性が高まっています。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('natural-energy-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 生物多様性詳細モーダル -->
+    <div id="biodiversity-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('biodiversity-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">生物多様性について</h3>
+                    <button onclick="closeModal('biodiversity-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        生物多様性とは、地球上に存在する多様な生き物と、それらが織りなす生態系の豊かさのことです。
+                    </p>
+                    <p class="text-gray-600">具体的には、以下の3つのレベルがあります:</p>
+                    <div class="space-y-3">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">生態系の多様性</h4>
+                            <p class="text-gray-600 text-sm">森林、草原、湿地、海洋など、様々な環境・生態系が存在すること</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">種の多様性</h4>
+                            <p class="text-gray-600 text-sm">動物、植物、微生物など、多種多様な生物種が存在すること</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">遺伝子の多様性</h4>
+                            <p class="text-gray-600 text-sm">同じ種の中でも個体ごとに遺伝的な違いがあること</p>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <p class="text-gray-700 font-semibold mb-2">なぜ重要か:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 生き物同士が支え合って生態系のバランスを保っている</li>
+                            <li>• 食料、医薬品、資源など人間生活の基盤となっている</li>
+                            <li>• 環境変化への適応力を高める</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600">
+                        例えば、農業では生物多様性が高い環境ほど、天敵昆虫が害虫を抑えたり、土壌が豊かになったりと、自然の力で健全な栽培ができます。
+                    </p>
+                    <p class="text-gray-600">
+                        近年、開発や気候変動により生物多様性が失われつつあり、その保全が世界的な課題となっています。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('biodiversity-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 標準栽培詳細モーダル -->
+    <div id="standard-cultivation-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('standard-cultivation-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">標準栽培について</h3>
+                    <button onclick="closeModal('standard-cultivation-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        標準栽培(慣行栽培)とは、その地域で一般的に行われている、従来通りの栽培方法のことです。
+                    </p>
+                    <p class="text-gray-600">具体的には:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                        <li>地域の平均的な農薬・化学肥料の使用量に基づいて栽培する方法</li>
+                        <li>長年その地域で確立されてきた標準的な技術や資材の使い方</li>
+                        <li>安定した収量を確保するための一般的な病害虫対策</li>
+                    </ul>
+                    <p class="text-gray-600">
+                        つまり、特別に減農薬や有機栽培などを意識せず、その地域の農家が通常行っている栽培方法が標準栽培(慣行栽培)です。
+                    </p>
+                    <p class="text-gray-600">
+                        減農薬栽培や有機栽培などの「特別な栽培方法」と比較する際の基準・比較対象となる栽培方法と考えるとわかりやすいでしょう。
+                    </p>
+                    <p class="text-gray-600">
+                        例えば、「この野菜は標準栽培より農薬使用量を50%削減しています」という表現をする際の「標準」がこれにあたります。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('standard-cultivation-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 有機栽培詳細モーダル -->
+    <div id="organic-cultivation-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('organic-cultivation-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">有機栽培について</h3>
+                    <button onclick="closeModal('organic-cultivation-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        有機栽培とは、化学的に合成された農薬や肥料を使わずに、自然由来の資材のみで作物を育てる栽培方法です。
+                    </p>
+                    <p class="text-gray-600">具体的には:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                        <li>化学合成農薬・化学肥料を原則使用しない</li>
+                        <li>堆肥や緑肥などの有機質肥料を使用</li>
+                        <li>生物の力や自然のサイクルを活かした栽培</li>
+                        <li>遺伝子組み換え技術を使用しない</li>
+                    </ul>
+                    <p class="text-gray-600">
+                        日本では「有機JAS規格」という厳しい基準があり、これに適合し認証を受けた農産物だけが「有機○○」や「オーガニック○○」と表示できます。
+                    </p>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="text-gray-700 font-semibold mb-2">減農薬栽培との違いは:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 減農薬栽培 = 化学農薬を「少なく」使う</li>
+                            <li>• 有機栽培 = 化学農薬を「使わない」(天然由来の許可された資材のみ使用可)</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600">
+                        環境保全や食の安全を重視した栽培方法ですが、手間がかかるため、一般的に価格は高めになります。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('organic-cultivation-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 無農薬栽培詳細モーダル -->
+    <div id="no-pesticide-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('no-pesticide-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">農薬不使用について</h3>
+                    <button onclick="closeModal('no-pesticide-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        農薬不使用とは、農薬を一切使用せずに作物を育てる栽培方法です。
+                    </p>
+                    <p class="text-gray-600">具体的には:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                        <li>農薬を全く使わない栽培</li>
+                        <li>手作業での除草や害虫の捕殺</li>
+                        <li>病害虫に強い品種の選択</li>
+                        <li>栽培環境の工夫による病害虫予防</li>
+                    </ul>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="text-gray-700 font-semibold mb-2">他の栽培方法との違い:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 減農薬栽培 = 農薬を「少なく」使う</li>
+                            <li>• 有機栽培 = 化学農薬は使わないが、天然由来の許可された農薬は使える</li>
+                            <li>• 農薬不使用 = 一切の農薬を使わない</li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                        <p class="text-gray-700 font-semibold mb-2">注意点:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• 現在、日本では「無農薬」という表示は原則禁止されています(誤解を招くため)</li>
+                            <li>• 代わりに「農薬不使用」「農薬を使用していない」などの表現が使われます</li>
+                            <li>• 化学肥料については規定がないため、無農薬でも化学肥料を使っている場合があります</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600">
+                        病害虫の管理が非常に難しく、収量が不安定になりやすいため、最も手間とリスクが大きい栽培方法と言えます。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('no-pesticide-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 減農薬栽培詳細モーダル -->
+    <div id="reduced-pesticide-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('reduced-pesticide-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">減農薬栽培について</h3>
+                    <button onclick="closeModal('reduced-pesticide-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-600">
+                        減農薬栽培とは、農薬の使用量を通常の慣行栽培よりも少なく抑えて作物を育てる栽培方法です。
+                    </p>
+                    <p class="text-gray-600">
+                        具体的には、その地域の一般的な栽培方法と比べて、農薬の使用回数や量を50%以上削減することが多く、以下のような工夫をします:
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                        <li>病害虫に強い品種の選択</li>
+                        <li>天敵昆虫の活用</li>
+                        <li>適切な栽培管理による病気の予防</li>
+                        <li>必要最小限の農薬使用</li>
+                    </ul>
+                    <p class="text-gray-600">
+                        完全に農薬を使わない「無農薬栽培」とは異なり、必要に応じて最小限の農薬は使用しますが、環境や人体への負担を減らしつつ、安定的な収穫を目指す栽培方法です。
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="closeModal('reduced-pesticide-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Lucide icons initialization
+        lucide.createIcons();
+
+        // AOS initialization
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+
+        // Navigation scroll effect
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const logoText = document.getElementById('logo-text');
+            const navLinks = document.querySelectorAll('#navbar a');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+            if (window.scrollY > 50) {
+                navbar.classList.remove('nav-transparent');
+                navbar.classList.add('nav-glass');
+                logoText.classList.remove('text-white');
+                logoText.classList.add('text-gray-900');
+                logoText.style.textShadow = 'none';
+
+                // ナビリンクの色を変更
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-gray-900');
+                    link.classList.remove('hover:text-yellow-300');
+                    link.classList.add('hover:text-warm-600');
+                    link.style.textShadow = 'none';
+                });
+
+                // モバイルメニューボタンの色を変更
+                mobileMenuBtn.classList.remove('text-white');
+                mobileMenuBtn.classList.add('text-gray-900');
+                mobileMenuBtn.style.textShadow = 'none';
+            } else {
+                navbar.classList.remove('nav-glass');
+                navbar.classList.add('nav-transparent');
+                logoText.classList.remove('text-gray-900');
+                logoText.classList.add('text-white');
+                logoText.style.textShadow = '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.8)';
+
+                // ナビリンクの色を元に戻す
+                navLinks.forEach(link => {
+                    link.classList.remove('text-gray-900');
+                    link.classList.add('text-white');
+                    link.classList.remove('hover:text-warm-600');
+                    link.classList.add('hover:text-orange-300');
+                    link.style.textShadow = '2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6)';
+                });
+
+                // モバイルメニューボタンの色を元に戻す
+                mobileMenuBtn.classList.remove('text-gray-900');
+                mobileMenuBtn.classList.add('text-white');
+                mobileMenuBtn.style.textShadow = '2px 2px 4px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.6)';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+
+            // Add animation
+            setTimeout(() => {
+                const modalContent = modal.querySelector('.transform');
+                modalContent.classList.add('scale-100');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('.transform');
+
+            modalContent.classList.add('scale-95');
+            modalContent.classList.remove('scale-100');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 300);
+        }
+
+        // Contact form submission (modal form)
+        const modalContactForm = document.getElementById('contact-form');
+        if (modalContactForm) {
+            modalContactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // フォームの入力値を取得
+                const name = this.querySelector('input[name="name"]').value;
+                const email = this.querySelector('input[name="email"]').value;
+                const message = this.querySelector('textarea[name="message"]').value;
+
+                // メール件名と本文を作成
+                const subject = encodeURIComponent('日南レモンに関するお問い合わせ');
+                const body = encodeURIComponent(
+                    `お名前: ${name}\n` +
+                    `メールアドレス: ${email}\n\n` +
+                    `お問い合わせ内容:\n${message}\n\n` +
+                    `---\n` +
+                    `日南レモン生産組合Webサイトからのお問い合わせ`
+                );
+
+                // mailtoリンクを作成
+                const mailtoLink = `mailto:zimukyoku@nichinanlemon.jp?subject=${subject}&body=${body}`;
+
+                alert('メールクライアントが開きます。内容をご確認の上、送信してください。');
+                closeModal('contact-modal');
+                window.location.href = mailtoLink;
+                this.reset();
+            });
+        }
+
+        // Escape key to close modals
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+                    if (!modal.classList.contains('hidden')) {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scroll-top');
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

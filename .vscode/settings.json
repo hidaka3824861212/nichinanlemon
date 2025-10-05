@@ -1,0 +1,20 @@
+{
+  "timeline.showView": true,
+  "timeline.pageSize": 20,
+  "timeline.excludeSources": [],
+  "git.timeline.showAuthor": true,
+  "git.timeline.showUncommitted": true,
+  "git.timeline.date": "committed",
+  "scm.showChangesSummary": true,
+  "git.showProgress": true,
+  "git.decorations.enabled": true,
+  "git.enabled": true,
+  "git.autorefresh": true,
+  "git.autofetch": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true
+  },
+  "extensions.autoUpdate": true
+}
