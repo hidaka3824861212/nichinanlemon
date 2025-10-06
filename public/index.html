@@ -201,11 +201,12 @@
             border: 2px solid #1f2937;
             cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .science-button:hover {
             background: #ea580c;
-            color: white;
+            color: #000000;
             border-color: #ea580c;
         }
 
@@ -214,6 +215,17 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            position: relative;
+        }
+
+        .science-button:hover .science-button-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #000000;
         }
 
         /* セーフエリア対応 */
@@ -326,10 +338,15 @@
             }
         }
 
-        /* レシピセクション・ニュースセクションの「レシピを見る →」「詳しく見る →」「オンラインショップへ →」にホバー時のアンダーライン */
+        /* レシピセクション・ニュースセクション・栽培セクション・持続可能な農業セクション・特徴セクションの「レシピを見る →」「詳しく見る →」「オンラインショップへ →」「詳しくはこちら →」にホバー時のアンダーライン */
         #recipes button.text-warm-600,
         #news button.text-warm-600,
-        #news a.text-warm-600 {
+        #news a.text-warm-600,
+        #about button.text-warm-600,
+        #cultivation button.text-green-600,
+        #cultivation button.text-warm-600,
+        #sustainability button.text-green-600,
+        #sustainability button.text-warm-600 {
             position: relative;
             display: inline-block;
             text-decoration: none;
@@ -337,7 +354,12 @@
 
         #recipes button.text-warm-600::after,
         #news button.text-warm-600::after,
-        #news a.text-warm-600::after {
+        #news a.text-warm-600::after,
+        #about button.text-warm-600::after,
+        #cultivation button.text-green-600::after,
+        #cultivation button.text-warm-600::after,
+        #sustainability button.text-green-600::after,
+        #sustainability button.text-warm-600::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -348,9 +370,25 @@
             transition: width 0.3s ease-out;
         }
 
+        #recipes button.text-warm-600:hover,
+        #news button.text-warm-600:hover,
+        #news a.text-warm-600:hover,
+        #about button.text-warm-600:hover,
+        #cultivation button.text-green-600:hover,
+        #cultivation button.text-warm-600:hover,
+        #sustainability button.text-green-600:hover,
+        #sustainability button.text-warm-600:hover {
+            color: #000000;
+        }
+
         #recipes button.text-warm-600:hover::after,
         #news button.text-warm-600:hover::after,
-        #news a.text-warm-600:hover::after {
+        #news a.text-warm-600:hover::after,
+        #about button.text-warm-600:hover::after,
+        #cultivation button.text-green-600:hover::after,
+        #cultivation button.text-warm-600:hover::after,
+        #sustainability button.text-green-600:hover::after,
+        #sustainability button.text-warm-600:hover::after {
             width: 100%;
         }
     </style>
@@ -748,18 +786,45 @@
                                 <i data-lucide="check" class="w-4 h-4 text-gray-900"></i>
                             </div>
                             <span class="text-gray-700">温暖な気候と豊富な日照時間</span>
+                            <button onclick="openModal('warm-climate-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                (詳しくはこちら →)
+                            </button>
                         </div>
                         <div class="flex items-center space-x-3">
                             <div class="w-6 h-6 bg-warm-400 rounded-full flex items-center justify-center">
                                 <i data-lucide="check" class="w-4 h-4 text-gray-900"></i>
                             </div>
                             <span class="text-gray-700">海からの潮風と山からの清らかな水</span>
+                            <button onclick="openModal('sea-mountain-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                (詳しくはこちら →)
+                            </button>
                         </div>
                         <div class="flex items-center space-x-3">
                             <div class="w-6 h-6 bg-warm-400 rounded-full flex items-center justify-center">
                                 <i data-lucide="check" class="w-4 h-4 text-gray-900"></i>
                             </div>
                             <span class="text-gray-700">徹底した品質管理と履歴管理</span>
+                            <button onclick="openModal('quality-management-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                (詳しくはこちら →)
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-warm-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-4 h-4 text-gray-900"></i>
+                            </div>
+                            <span class="text-gray-700">環境配慮型の減農薬栽培技術</span>
+                            <button onclick="openModal('eco-friendly-cultivation-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                (詳しくはこちら →)
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-warm-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-4 h-4 text-gray-900"></i>
+                            </div>
+                            <span class="text-gray-700">丁寧な手作業による栽培管理</span>
+                            <button onclick="openModal('manual-cultivation-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                (詳しくはこちら →)
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -787,16 +852,20 @@
                         品質管理システム
                     </h3>
                     <p class="text-gray-600 mb-8 text-lg leading-relaxed">
-                        全生産者が農薬や肥料の使用履歴を記録する「防除暦」を作成・保管し、栽培工程を追跡・確認できる履歴管理システムで安全を確保しています。
+                        栽培から収穫、出荷まで一貫した品質管理体制を構築しています。トレーサビリティシステムによる栽培履歴の追跡、収穫後の徹底した鮮度管理、厳格な選別・等級基準により、高品質で安心・安全なレモンをお届けしています。
                     </p>
-                    <div class="space-y-6">
+                    <div class="space-y-2">
                         <div class="flex items-start space-x-4">
                             <div class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="clipboard-check" class="w-6 h-6 text-warm-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-lg text-gray-900 mb-2">防除暦の作成・保管</h4>
-                                <p class="text-gray-600">農薬や肥料の使用履歴を詳細に記録</p>
+                                <h4 class="font-semibold text-lg text-gray-900">
+                                    品質管理システム
+                                    <button onclick="openModal('quality-system-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                        (詳しくはこちら →)
+                                    </button>
+                                </h4>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
@@ -804,8 +873,38 @@
                                 <i data-lucide="search" class="w-6 h-6 text-warm-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-lg text-gray-900 mb-2">トレーサビリティ</h4>
-                                <p class="text-gray-600">栽培工程を追跡・確認できるシステム</p>
+                                <h4 class="font-semibold text-lg text-gray-900">
+                                    トレーサビリティ
+                                    <button onclick="openModal('traceability-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                        (詳しくはこちら →)
+                                    </button>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="thermometer-snowflake" class="w-6 h-6 text-warm-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900">
+                                    収穫後の徹底した鮮度管理
+                                    <button onclick="openModal('freshness-management-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                        (詳しくはこちら →)
+                                    </button>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="scale" class="w-6 h-6 text-warm-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900">
+                                    厳格な選別・等級基準
+                                    <button onclick="openModal('grading-standards-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                        (詳しくはこちら →)
+                                    </button>
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -1020,8 +1119,8 @@
                             <div>
                                 <h4 class="font-semibold text-lg text-gray-900 mb-1">
                                     有機肥料の活用
-                                    <button onclick="openModal('organic-fertilizer-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline ml-2">
-                                        (詳しくはこちら)
+                                    <button onclick="openModal('organic-fertilizer-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                        (詳しくはこちら →)
                                     </button>
                                 </h4>
                                 <p class="text-gray-600">化学肥料を減らし、堆肥などの有機肥料を積極的に使用しています</p>
@@ -1034,8 +1133,8 @@
                             <div>
                                 <h4 class="font-semibold text-lg text-gray-900 mb-1">
                                     水資源の保護
-                                    <button onclick="openModal('water-resource-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline ml-2">
-                                        (詳しくはこちら)
+                                    <button onclick="openModal('water-resource-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                        (詳しくはこちら →)
                                     </button>
                                 </h4>
                                 <p class="text-gray-600">効率的な灌漑システムで水資源を大切に管理しています</p>
@@ -1048,8 +1147,8 @@
                             <div>
                                 <h4 class="font-semibold text-lg text-gray-900 mb-1">
                                     循環型農業
-                                    <button onclick="openModal('circular-agriculture-modal')" class="text-green-600 text-sm font-medium hover:text-green-700 hover:underline ml-2">
-                                        (詳しくはこちら)
+                                    <button onclick="openModal('circular-agriculture-modal')" class="text-warm-600 text-sm font-medium ml-2">
+                                        (詳しくはこちら →)
                                     </button>
                                 </h4>
                                 <p class="text-gray-600">剪定枝や果実残渣を堆肥化し、畑に還元しています</p>
@@ -1317,20 +1416,117 @@
     <div id="recipe-modal" class="fixed inset-0 z-50 hidden">
         <div class="modal-backdrop fixed inset-0" onclick="closeModal('recipe-modal')"></div>
         <div class="fixed inset-0 flex items-center justify-center p-4">
-            <div class="card-glass rounded-2xl p-8 w-full max-w-lg transform transition-all modal-container">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
                 <div class="flex justify-between items-center mb-6">
-                    <h3 class="font-inter font-bold text-2xl text-gray-900">レシピ詳細</h3>
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">日南レモンを使った美味しいレモンウォーターの代表的なレシピ</h3>
                     <button onclick="closeModal('recipe-modal')" class="text-gray-500 hover:text-gray-700">
                         <i data-lucide="x" class="w-6 h-6"></i>
                     </button>
                 </div>
-                <div class="space-y-4">
-                    <p class="text-gray-600">
-                        日南レモンを使った美味しいレシピをご紹介します。皮まで使えるので、レモンの香りを余すことなくお楽しみいただけます。
-                    </p>
-                    <p class="text-gray-600">
-                        詳しいレシピは、お問い合わせいただければお送りいたします。
-                    </p>
+                <div class="space-y-6">
+                    <!-- 基本のレモンウォーター -->
+                    <div class="bg-lemon-50 p-6 rounded-xl">
+                        <h4 class="font-semibold text-xl text-gray-900 mb-4">基本のレモンウォーター</h4>
+
+                        <div class="mb-4">
+                            <h5 class="font-semibold text-gray-900 mb-2">材料</h5>
+                            <ul class="space-y-1 text-gray-600">
+                                <li>• レモン: 1/2個</li>
+                                <li>• 水: 200〜300ml（常温または冷水）</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h5 class="font-semibold text-gray-900 mb-2">作り方</h5>
+                            <ol class="space-y-1 text-gray-600 list-decimal list-inside">
+                                <li>レモンをよく洗う</li>
+                                <li>レモンを絞って果汁を水に加える</li>
+                                <li>お好みでレモンスライスを浮かべる</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- 人気のバリエーション -->
+                    <div>
+                        <h4 class="font-semibold text-xl text-gray-900 mb-4">人気のバリエーション</h4>
+
+                        <div class="space-y-3">
+                            <div class="bg-white border border-warm-200 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                    <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">1</span>
+                                    はちみつレモンウォーター
+                                </h5>
+                                <p class="text-gray-600 text-sm mb-1">レモン果汁 + 水 + はちみつ（大さじ1）</p>
+                                <p class="text-warm-600 text-sm">疲労回復・喉に優しい</p>
+                            </div>
+
+                            <div class="bg-white border border-warm-200 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                    <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">2</span>
+                                    ミントレモンウォーター
+                                </h5>
+                                <p class="text-gray-600 text-sm mb-1">レモンスライス + 水 + フレッシュミント</p>
+                                <p class="text-warm-600 text-sm">爽やかで夏にぴったり</p>
+                            </div>
+
+                            <div class="bg-white border border-warm-200 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                    <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">3</span>
+                                    ジンジャーレモンウォーター
+                                </h5>
+                                <p class="text-gray-600 text-sm mb-1">レモン果汁 + 水 + すりおろし生姜（少々）</p>
+                                <p class="text-warm-600 text-sm">体を温める・代謝アップ</p>
+                            </div>
+
+                            <div class="bg-white border border-warm-200 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                    <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">4</span>
+                                    きゅうりレモンウォーター（デトックス）
+                                </h5>
+                                <p class="text-gray-600 text-sm mb-1">レモンスライス + きゅうりスライス + 水</p>
+                                <p class="text-warm-600 text-sm">さっぱりとしたデトックスウォーター</p>
+                            </div>
+
+                            <div class="bg-white border border-warm-200 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                    <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">5</span>
+                                    ホットレモンウォーター
+                                </h5>
+                                <p class="text-gray-600 text-sm mb-1">レモン果汁 + お湯（70〜80℃）+ はちみつ</p>
+                                <p class="text-warm-600 text-sm">朝の習慣・冬の定番</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ポイント -->
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-gray-900 mb-3 flex items-center">
+                            <i data-lucide="lightbulb" class="w-5 h-5 text-green-600 mr-2"></i>
+                            ポイント
+                        </h5>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>国産レモンなら皮ごと使える</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>作り置きする場合は冷蔵保存で当日中に</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>朝起きてすぐ飲むと代謝アップ効果</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-lemon-100 p-4 rounded-lg text-center">
+                        <p class="text-gray-700 font-medium">
+                            <i data-lucide="star" class="w-4 h-4 inline text-lemon-600 mr-1"></i>
+                            基本のレモンウォーターが最もシンプルで代表的なレシピです。
+                        </p>
+                    </div>
+
                     <div class="pt-4">
                         <button onclick="closeModal('recipe-modal')" class="ios-button w-full">
                             閉じる
@@ -1376,6 +1572,763 @@
         </div>
     </div>
 
+    <!-- 海からの潮風と山からの清らかな水モーダル -->
+    <div id="sea-mountain-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('sea-mountain-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">海からの潮風と山からの清らかな水</h3>
+                    <button onclick="closeModal('sea-mountain-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">海からの恵み</h4>
+                        <p class="text-gray-600">
+                            日南市は東に日向灘を臨み、黒潮が流れる温暖な海に面しています。海からの潮風は、ミネラル分を豊富に含んでおり、レモンの果実に独特の風味を与えます。
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mt-3">
+                            <li class="flex items-start">
+                                <i data-lucide="droplets" class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>ミネラル豊富な潮風:</strong> 海のミネラルが果実の風味を豊かにする</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="thermometer-sun" class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>温暖な海流:</strong> 黒潮の影響で年間を通じて温暖</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>独特の風味:</strong> 潮風がレモンに独特の味わいを与える</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">山からの恵み</h4>
+                        <p class="text-gray-600">
+                            日南市の背後には豊かな山々が広がり、清らかな水が山から流れてきます。この水はミネラルを豊富に含み、レモンの栽培に最適な環境を提供します。
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mt-3">
+                            <li class="flex items-start">
+                                <i data-lucide="droplet" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>清らかな水:</strong> 山からの清流がレモン栽培に必要な水分を供給</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="gem" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>ミネラル豊富:</strong> 山の土壌から溶け出したミネラルが水に含まれる</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="heart" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>豊かな土壌:</strong> 山からの栄養が土壌を豊かにする</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">海と山の相乗効果</h4>
+                        <p class="text-gray-600">
+                            海からの潮風と山からの清らかな水、この二つの自然の恵みが組み合わさることで、日南レモンは他にはない豊かな風味と香りを持つレモンに育ちます。海と山に囲まれた日南の地形が、レモン栽培に最適な環境を作り出しています。
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('sea-mountain-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 徹底した品質管理と履歴管理モーダル -->
+    <div id="quality-management-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('quality-management-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">徹底した品質管理と履歴管理</h3>
+                    <button onclick="closeModal('quality-management-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">トレーサビリティシステム</h4>
+                        <p class="text-gray-600">
+                            日南レモン生産組合では、栽培から出荷までの全工程を記録・管理するトレーサビリティシステムを導入しています。いつ、どこで、誰が、どのように栽培したかを明確に追跡できる体制を整えています。
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mt-3">
+                            <li class="flex items-start">
+                                <i data-lucide="clipboard-list" class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>栽培記録:</strong> 肥料や農薬の使用状況を詳細に記録</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="calendar-check" class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>作業履歴:</strong> 剪定、摘果、収穫などの作業履歴を管理</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="package" class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>出荷管理:</strong> 出荷時期と出荷先を明確に記録</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">品質管理体制</h4>
+                        <p class="text-gray-600">
+                            収穫から出荷まで、厳格な品質基準に基づいて選別・管理を行っています。
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mt-3">
+                            <li class="flex items-start">
+                                <i data-lucide="eye" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>目視検査:</strong> 熟練スタッフによる外観チェック</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="ruler" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>サイズ選別:</strong> 規格に応じた正確な選別</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>品質検査:</strong> 糖度、酸度などの品質測定</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">安心・安全への取り組み</h4>
+                        <p class="text-gray-600">
+                            消費者の皆様に安心してお召し上がりいただけるよう、以下の取り組みを実施しています。
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mt-3">
+                            <li class="flex items-start">
+                                <i data-lucide="sprout" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>農薬使用の最小化:</strong> 必要最小限の農薬使用</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="file-check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>定期的な検査:</strong> 残留農薬検査の実施</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="award" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>認証取得:</strong> 各種品質認証の取得</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-warm-50 p-4 rounded-lg">
+                        <p class="text-gray-700 text-sm">
+                            <i data-lucide="info" class="w-4 h-4 inline mr-1 text-warm-600"></i>
+                            徹底した管理体制により、消費者の皆様に安心・安全な日南レモンをお届けしています。
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('quality-management-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 品質管理システムモーダル -->
+    <div id="quality-system-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('quality-system-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">品質管理システム</h3>
+                    <button onclick="closeModal('quality-system-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">一貫した品質管理体制</h4>
+                        <p class="text-gray-600">
+                            日南レモン生産組合では、栽培から収穫、選別、出荷まで、すべての工程において徹底した品質管理を行っています。各段階で厳格な基準を設け、高品質なレモンをお届けするための体制を構築しています。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">栽培段階の品質管理</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="clipboard-list" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>防除暦の作成・記録:</strong> 農薬や肥料の使用履歴を詳細に記録</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="eye" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>定期的な巡回:</strong> 生育状況を定期的にチェック</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="thermometer" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>環境モニタリング:</strong> 気温、湿度、日照時間などを記録</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">収穫・選別段階の品質管理</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="calendar-check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>適期収穫:</strong> 熟度を見極めて最適なタイミングで収穫</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="search" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>厳格な選別:</strong> サイズ、色、傷の有無などを厳密にチェック</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>品質検査:</strong> 糖度、酸度などの品質基準を測定</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">出荷段階の品質管理</h4>
+                        <p class="text-gray-600">
+                            出荷前の最終検査、適切な温度・湿度管理による鮮度保持、出荷記録の管理など、お客様に新鮮で高品質なレモンをお届けするための徹底した管理を行っています。
+                        </p>
+                    </div>
+
+                    <div class="bg-warm-50 p-4 rounded-lg">
+                        <p class="text-gray-700 text-sm">
+                            <i data-lucide="award" class="w-4 h-4 inline mr-1 text-warm-600"></i>
+                            各工程での徹底した品質管理により、安心・安全で高品質な日南レモンをお届けしています。
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('quality-system-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- トレーサビリティモーダル -->
+    <div id="traceability-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('traceability-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">トレーサビリティ</h3>
+                    <button onclick="closeModal('traceability-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">トレーサビリティシステムとは</h4>
+                        <p class="text-gray-600">
+                            トレーサビリティとは、製品の生産から流通、販売までの履歴を追跡できる仕組みです。日南レモン生産組合では、いつ、どこで、誰が、どのように栽培したかを明確に追跡できる体制を整えています。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">記録・管理する情報</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>生産者情報:</strong> 生産者名、農園の場所</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="clipboard-list" class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>栽培記録:</strong> 肥料・農薬の使用履歴、作業内容</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="calendar" class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>収穫情報:</strong> 収穫日、収穫量</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="package" class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>出荷情報:</strong> 出荷日、出荷先、ロット番号</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">トレーサビリティのメリット</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>安全性の確保:</strong> 万一の問題発生時に迅速な原因究明・対応が可能</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>透明性の向上:</strong> 生産履歴が明確で消費者に安心を提供</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="trending-up" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>品質向上:</strong> 栽培データの分析により品質改善に活用</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">消費者への情報提供</h4>
+                        <p class="text-gray-600">
+                            トレーサビリティシステムにより、消費者の皆様は購入したレモンがどのように栽培されたかを確認できます。透明性の高い情報提供により、安心してお召し上がりいただけます。
+                        </p>
+                    </div>
+
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <p class="text-gray-700 text-sm">
+                            <i data-lucide="info" class="w-4 h-4 inline mr-1 text-purple-600"></i>
+                            栽培工程を追跡・確認できるシステムで、安心・安全な日南レモンをお届けしています。
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('traceability-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 収穫後の徹底した鮮度管理モーダル -->
+    <div id="freshness-management-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('freshness-management-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">収穫後の徹底した鮮度管理</h3>
+                    <button onclick="closeModal('freshness-management-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">鮮度管理の重要性</h4>
+                        <p class="text-gray-600">
+                            レモンの品質を保つためには、収穫後の鮮度管理が極めて重要です。日南レモン生産組合では、収穫から出荷までの各段階で適切な温度・湿度管理を行い、新鮮なレモンをお届けしています。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">収穫直後の管理</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="sun" class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>予冷処理:</strong> 収穫後速やかに適温まで冷却し、品質劣化を防止</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="droplets" class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>湿度管理:</strong> 適切な湿度を保ち、果実の水分蒸発を防止</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="wind" class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>通気性確保:</strong> 適度な換気により、カビの発生を抑制</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">保管時の温度・湿度管理</h4>
+                        <p class="text-gray-600 mb-2">
+                            レモンに最適な保管環境を維持するため、以下の管理を徹底しています：
+                        </p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="thermometer" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>温度管理:</strong> 5〜10℃の最適温度を維持</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="gauge" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>湿度管理:</strong> 85〜90%の適度な湿度を保持</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="activity" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>環境モニタリング:</strong> 24時間体制で温湿度を監視</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">出荷時の鮮度保持</h4>
+                        <p class="text-gray-600">
+                            出荷時には、コールドチェーン（低温物流体制）を維持し、輸送中も適切な温度管理を行います。これにより、お客様のもとへ新鮮な状態でレモンをお届けすることができます。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">鮮度管理のメリット</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>香り・風味の保持</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="leaf" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>ビタミンCなど栄養価の維持</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="clock" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>保存期間の延長</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <p class="text-gray-700 text-sm">
+                            <i data-lucide="thermometer-snowflake" class="w-4 h-4 inline mr-1 text-blue-600"></i>
+                            徹底した温度・湿度管理により、収穫したての鮮度を保ったままお届けしています。
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('freshness-management-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 厳格な選別・等級基準モーダル -->
+    <div id="grading-standards-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('grading-standards-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">厳格な選別・等級基準</h3>
+                    <button onclick="closeModal('grading-standards-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">選別の重要性</h4>
+                        <p class="text-gray-600">
+                            日南レモン生産組合では、収穫後のレモンを厳格な基準に基づいて選別しています。サイズ、色、形状、傷の有無など、複数の項目をチェックし、高品質なレモンのみをお届けしています。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">選別基準</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="ruler" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>サイズ:</strong> 直径や重量による規格分け（S、M、L、2L等）</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="palette" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>色:</strong> 果皮の色合いと均一性（グリーン、イエロー）</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="circle" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>形状:</strong> 整った形状、変形の有無</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="eye" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>外観:</strong> 傷、病害虫被害、汚れの有無</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="droplet" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>果汁:</strong> 果汁の量、糖度、酸度</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">等級分け</h4>
+                        <div class="space-y-3">
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2">秀品（最上級）</h5>
+                                <p class="text-sm text-gray-600">サイズが揃い、色・形状ともに優れ、傷や汚れがほとんどない最高品質のレモン</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2">優品（上級）</h5>
+                                <p class="text-sm text-gray-600">サイズ・色・形状が良好で、わずかな傷があっても品質に問題のないレモン</p>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2">良品（標準）</h5>
+                                <p class="text-sm text-gray-600">食用に適した品質を持ち、多少の傷や形状の不揃いがあるレモン</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">選別作業の流れ</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-gray-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>目視検査:</strong> 熟練スタッフによる外観チェック</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-gray-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>サイズ選別:</strong> 専用機械によるサイズ測定・分類</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-gray-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>品質検査:</strong> 糖度・酸度の測定（抽出サンプル）</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-gray-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>最終チェック:</strong> 出荷前の最終確認</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-warm-50 p-4 rounded-lg">
+                        <p class="text-gray-700 text-sm">
+                            <i data-lucide="badge-check" class="w-4 h-4 inline mr-1 text-warm-600"></i>
+                            厳格な選別・等級基準により、用途や目的に応じた高品質なレモンをお届けしています。
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('grading-standards-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 環境配慮型の減農薬栽培技術モーダル -->
+    <div id="eco-friendly-cultivation-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('eco-friendly-cultivation-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">環境配慮型の減農薬栽培技術</h3>
+                    <button onclick="closeModal('eco-friendly-cultivation-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">環境に優しい栽培方法</h4>
+                        <p class="text-gray-600">
+                            日南レモン生産組合では、環境への負荷を最小限に抑えた減農薬栽培技術を採用しています。化学農薬の使用を必要最小限に留め、自然の力を最大限に活用した栽培を行っています。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">減農薬栽培の具体的な取り組み</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="leaf" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>天敵の活用:</strong> 害虫の天敵となる益虫を保護・活用し、自然のバランスで害虫を抑制</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="sprout" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>有機肥料の使用:</strong> 化学肥料を減らし、堆肥などの有機肥料を中心に使用</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="shield" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>病害予防:</strong> 適切な剪定や通気性の確保で病気の発生を予防</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="droplets" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>適切な水管理:</strong> 過度な湿気を避け、病害の発生を抑制</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">環境への配慮</h4>
+                        <p class="text-gray-600">
+                            減農薬栽培により、土壌の微生物や周辺の生態系を守り、持続可能な農業を実現しています。また、農薬使用の記録を徹底的に管理し、安全性を確保しています。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">消費者への安心</h4>
+                        <p class="text-gray-600">
+                            減農薬栽培により、皮まで安心して使えるレモンを提供しています。レモンの皮には香り成分が豊富に含まれており、料理やお菓子作りに幅広く活用できます。
+                        </p>
+                    </div>
+
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="text-gray-700 text-sm">
+                            <i data-lucide="heart" class="w-4 h-4 inline mr-1 text-green-600"></i>
+                            環境に優しく、人にも優しい栽培方法で、高品質な日南レモンをお届けしています。
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('eco-friendly-cultivation-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 丁寧な手作業による栽培管理モーダル -->
+    <div id="manual-cultivation-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('manual-cultivation-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">丁寧な手作業による栽培管理</h3>
+                    <button onclick="closeModal('manual-cultivation-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">一つひとつ丁寧に</h4>
+                        <p class="text-gray-600">
+                            日南レモン生産組合では、レモンの木一本一本、果実一つひとつに目を配り、丁寧な手作業による栽培管理を行っています。機械では対応できない細やかな作業を、熟練の農家が手作業で行うことで、高品質なレモンを育てています。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">手作業による主な作業</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="scissors" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>剪定作業:</strong> 木の状態を見極めながら、適切な枝を選んで丁寧に剪定</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="hand" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>摘果作業:</strong> 良質な果実を育てるため、適切なタイミングで余分な果実を間引く</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="eye" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>病害虫チェック:</strong> 定期的に木を観察し、病害虫の早期発見・対処</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="droplet" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>水やり管理:</strong> 天候や木の状態を見て、適切な水分管理を実施</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="package" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>収穫作業:</strong> 熟度を見極めて、一つひとつ手摘みで丁寧に収穫</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">手作業の利点</h4>
+                        <p class="text-gray-600 mb-2">
+                            手作業による栽培管理には、以下のような利点があります：
+                        </p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>木や果実の状態を細かく観察でき、異常の早期発見が可能</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>果実に傷をつけず、品質を保ったまま収穫できる</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>個々の木の特性に合わせた、きめ細かい管理が可能</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">熟練の技術</h4>
+                        <p class="text-gray-600">
+                            長年の経験を持つ農家の知識と技術が、日南レモンの品質を支えています。天候や季節に応じた適切な判断、木の健康状態の見極め、最適な収穫時期の判断など、熟練の技が活きています。
+                        </p>
+                    </div>
+
+                    <div class="bg-warm-50 p-4 rounded-lg">
+                        <p class="text-gray-700 text-sm">
+                            <i data-lucide="sparkles" class="w-4 h-4 inline mr-1 text-warm-600"></i>
+                            一つひとつの作業に込められた愛情と技術が、高品質な日南レモンを生み出しています。
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('manual-cultivation-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 温暖な気候モーダル -->
+    <div id="warm-climate-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('warm-climate-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">日南における「温暖な気候と豊富な日照時間」</h3>
+                    <button onclick="closeModal('warm-climate-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">地理的条件</h4>
+                        <p class="text-gray-600">
+                            日南市は宮崎県の南部に位置し、東には黒潮が流れる日向灘を臨む、温暖多照な気候の都市です。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">気候の特徴</h4>
+                        <p class="text-gray-600">
+                            年間を通じて温暖な気候に恵まれ、日照時間が長いのが特徴です。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">レモン栽培への影響</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="sun" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>豊富な日照:</strong> 光合成が活発になり、糖度が高まる</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="thermometer" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>温暖な気候:</strong> 柑橘類の生育に最適な環境</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="waves" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>黒潮の影響:</strong> 温暖で安定した気候をもたらす</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="wind" class="w-5 h-5 text-warm-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>潮風:</strong> ミネラル分が果実の風味を豊かにする</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 mb-2">品質への貢献</h4>
+                        <p class="text-gray-600">
+                            太陽の光と潮風をたっぷり浴びて育つことで、気高い香りと上品な酸味、フルーティーな後味を持つレモンが生まれます。
+                        </p>
+                        <p class="text-gray-600 mt-2">
+                            日南の南国の恵まれた自然環境が、高品質なレモン栽培を支えています。
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('warm-climate-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ニュースモーダル3 -->
     <div id="news-modal-3" class="fixed inset-0 z-50 hidden">
         <div class="modal-backdrop fixed inset-0" onclick="closeModal('news-modal-3')"></div>
@@ -1395,8 +2348,8 @@
                         <div class="flex items-start space-x-3 p-4 bg-warm-50 rounded-lg">
                             <i data-lucide="clipboard-check" class="w-5 h-5 text-warm-600 flex-shrink-0 mt-1"></i>
                             <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">防除暦の作成・保管</h4>
-                                <p class="text-sm text-gray-600">全生産者が農薬や肥料の使用履歴を詳細に記録しています。</p>
+                                <h4 class="font-semibold text-gray-900 mb-1">品質管理システム</h4>
+                                <p class="text-sm text-gray-600">栽培から出荷まで徹底した品質管理を実施しています。</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3 p-4 bg-warm-50 rounded-lg">
@@ -1404,6 +2357,20 @@
                             <div>
                                 <h4 class="font-semibold text-gray-900 mb-1">トレーサビリティ</h4>
                                 <p class="text-sm text-gray-600">栽培工程を追跡・確認できるシステムで安全を確保しています。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 p-4 bg-warm-50 rounded-lg">
+                            <i data-lucide="thermometer-snowflake" class="w-5 h-5 text-warm-600 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">収穫後の徹底した鮮度管理</h4>
+                                <p class="text-sm text-gray-600">温度・湿度管理により、新鮮なレモンをお届けしています。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 p-4 bg-warm-50 rounded-lg">
+                            <i data-lucide="scale" class="w-5 h-5 text-warm-600 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">厳格な選別・等級基準</h4>
+                                <p class="text-sm text-gray-600">サイズ・品質による厳密な選別を行っています。</p>
                             </div>
                         </div>
                     </div>
