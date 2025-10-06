@@ -103,29 +103,64 @@
             background-color: rgba(0, 0, 0, 0.4);
         }
 
-        /* モーダルのスクロール対応 */
+        /* モーダルのスクロール対応 - 全デバイス対応 */
         .modal-container {
-            max-height: 90vh;
-            overflow-y: auto;
+            max-height: 85vh;
+            overflow-y: auto !important;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #ea580c rgba(234, 88, 12, 0.1);
+            /* スムーズスクロール */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* iOS対応 */
         }
 
-        /* スクロールバーのスタイル */
+        /* Chrome/Safari/Edge用のスクロールバースタイル */
         .modal-container::-webkit-scrollbar {
-            width: 8px;
+            width: 14px;
+            height: 14px;
         }
 
         .modal-container::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(234, 88, 12, 0.15);
             border-radius: 10px;
+            margin: 10px 0;
+            border: 1px solid rgba(234, 88, 12, 0.2);
         }
 
         .modal-container::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.3);
+            background: linear-gradient(180deg, #ea580c 0%, #fb923c 100%);
             border-radius: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            min-height: 40px; /* 最小高さ設定 */
         }
 
         .modal-container::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 0, 0, 0.5);
+            background: linear-gradient(180deg, #c2410c 0%, #ea580c 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-container::-webkit-scrollbar-thumb:active {
+            background: linear-gradient(180deg, #9a3412 0%, #c2410c 100%);
+        }
+
+        /* モバイルデバイス用の追加スタイル */
+        @media (max-width: 768px) {
+            .modal-container {
+                max-height: 80vh;
+            }
+
+            .modal-container::-webkit-scrollbar {
+                width: 10px;
+            }
+        }
+
+        /* タッチデバイス用のスクロールインジケーター */
+        @supports (-webkit-touch-callout: none) {
+            .modal-container {
+                padding-right: 4px;
+            }
         }
 
         /* スムーズアニメーション - パフォーマンス最適化のため特定プロパティのみに適用 */
@@ -154,6 +189,31 @@
 
         .ios-button:active {
             transform: translateY(0);
+        }
+
+        /* 科学ボタン専用スタイル */
+        .science-button {
+            background: #ea580c;
+            border-radius: 12px;
+            padding: 14px 28px;
+            color: white;
+            font-weight: 600;
+            border: 2px solid #ea580c;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .science-button:hover {
+            background: white;
+            color: #1f2937;
+            border-color: #1f2937;
+        }
+
+        .science-button-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         /* セーフエリア対応 */
@@ -610,7 +670,13 @@
                         <i data-lucide="shield-check" class="w-8 h-8 text-warm-600"></i>
                     </div>
                     <h3 class="font-inter font-semibold text-xl text-gray-900 mb-4">皮まで安全</h3>
-                    <p class="text-gray-600">皮が薄く、苦みが少ないため、皮ごとお料理やお菓子作りにお使いいただけます</p>
+                    <p class="text-gray-600 mb-6">皮が薄く、苦みが少ないため、皮ごとお料理やお菓子作りにお使いいただけます</p>
+                    <button onclick="openModal('skin-safety-modal')" class="science-button w-full">
+                        <span class="science-button-text">
+                            <i data-lucide="shield-check" class="w-5 h-5 science-button-icon"></i>
+                            安全性の理由を見る
+                        </span>
+                    </button>
                 </div>
 
                 <div class="card-glass rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
@@ -618,7 +684,13 @@
                         <i data-lucide="heart" class="w-8 h-8 text-warm-600"></i>
                     </div>
                     <h3 class="font-inter font-semibold text-xl text-gray-900 mb-4">まろやかな酸味</h3>
-                    <p class="text-gray-600">通常のレモンより甘い香りと、まろやかな酸味が特徴的です</p>
+                    <p class="text-gray-600 mb-6">通常のレモンより甘い香りと、まろやかな酸味が特徴的です</p>
+                    <button onclick="openModal('mild-acidity-modal')" class="science-button w-full">
+                        <span class="science-button-text">
+                            <i data-lucide="beaker" class="w-5 h-5 science-button-icon"></i>
+                            科学的な理由を見る
+                        </span>
+                    </button>
                 </div>
 
                 <div class="card-glass rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
@@ -1345,6 +1417,193 @@
 
                     <div class="pt-4">
                         <button onclick="closeModal('yellow-product-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- まろやかな酸味の科学モーダル -->
+    <div id="mild-acidity-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('mild-acidity-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900 flex items-center">
+                        <i data-lucide="beaker" class="w-6 h-6 text-warm-600 mr-3"></i>
+                        まろやかな酸味の科学
+                    </h3>
+                    <button onclick="closeModal('mild-acidity-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <p class="text-gray-600 leading-relaxed">
+                        日南レモン(マイヤーレモン)の風味がまろやかな酸味である理由は、その遺伝的な特性にあります。
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-warm-50 rounded-xl p-6 border-l-4 border-warm-400">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center text-lg">
+                                <span class="inline-flex items-center justify-center w-8 h-8 bg-warm-400 text-gray-900 rounded-full font-bold mr-3">1</span>
+                                交配種であること
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                マイヤーレモンは、レモンとオレンジ(またはマンダリン)の自然交配種です。この遺伝的背景により、通常のレモンとは異なる化学組成を持っています。
+                            </p>
+                        </div>
+
+                        <div class="bg-warm-50 rounded-xl p-6 border-l-4 border-warm-400">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center text-lg">
+                                <span class="inline-flex items-center justify-center w-8 h-8 bg-warm-400 text-gray-900 rounded-full font-bold mr-3">2</span>
+                                酸含量が少ない
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed mb-3">
+                                通常のレモン(リスボンレモンやユーレカレモン)と比べて、クエン酸の含有量が約20〜30%低いのが特徴です。
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                酸度が低いため、舌に対する刺激が穏やかで、食べやすい味わいとなっています。
+                            </p>
+                        </div>
+
+                        <div class="bg-warm-50 rounded-xl p-6 border-l-4 border-warm-400">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center text-lg">
+                                <span class="inline-flex items-center justify-center w-8 h-8 bg-warm-400 text-gray-900 rounded-full font-bold mr-3">3</span>
+                                糖度が高い
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed mb-3">
+                                オレンジ系の遺伝子を受け継いでいるため、糖度が通常のレモンより高くなっています。
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                糖分が酸味を和らげ、まろやかな味わいを生み出します。酸と糖のバランスが絶妙です。
+                            </p>
+                        </div>
+
+                        <div class="bg-warm-50 rounded-xl p-6 border-l-4 border-warm-400">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center text-lg">
+                                <span class="inline-flex items-center justify-center w-8 h-8 bg-warm-400 text-gray-900 rounded-full font-bold mr-3">4</span>
+                                芳香成分の違い
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed mb-3">
+                                通常のレモンより柑橘系の甘い香り成分が豊富です。
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                皮が薄く、オレンジに近い香りの化合物を含んでいるため、より上品で華やかな香りが楽しめます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-6 bg-gradient-to-r from-warm-100 to-warm-50 rounded-xl border-2 border-warm-400">
+                        <div class="flex items-start">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-warm-600 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">まとめ</h4>
+                                <p class="text-gray-700 leading-relaxed">
+                                    つまり、「酸味が少なく、糖度が高い」という遺伝的特性が、あのまろやかで優しい酸味を生み出しているのです。日南の温暖な気候も、この特性を最大限に引き出すのに適しています。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('mild-acidity-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 皮まで安全の理由モーダル -->
+    <div id="skin-safety-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('skin-safety-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900 flex items-center">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-warm-600 mr-3"></i>
+                        皮まで安全な理由
+                    </h3>
+                    <button onclick="closeModal('skin-safety-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <p class="text-gray-600 leading-relaxed">
+                        日南レモン(マイヤーレモン)が「皮まで安全」とされる理由は、主に以下の点にあります。
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-green-50 rounded-xl p-6 border-l-4 border-green-500">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center text-lg">
+                                <span class="inline-flex items-center justify-center w-8 h-8 bg-green-500 text-white rounded-full font-bold mr-3">1</span>
+                                防カビ剤(ポストハーベスト農薬)不使用
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed mb-3">
+                                輸入レモンは長距離輸送のため、収穫後に防カビ剤(OPP、TBZ、イマザリルなど)が使用されます。これらは日本では食品添加物として扱われますが、収穫後の農薬処理は国内生産物には禁止されています。
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                日南レモンは国産なので、これらの防カビ剤を使う必要がありません。
+                            </p>
+                        </div>
+
+                        <div class="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center text-lg">
+                                <span class="inline-flex items-center justify-center w-8 h-8 bg-blue-500 text-white rounded-full font-bold mr-3">2</span>
+                                ワックス処理なし
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed mb-3">
+                                輸入レモンは、防カビ剤を含んだワックスでコーティングされることが多いです。
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                国産の日南レモンは基本的にワックス処理をしていません。
+                            </p>
+                        </div>
+
+                        <div class="bg-yellow-50 rounded-xl p-6 border-l-4 border-yellow-500">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center text-lg">
+                                <span class="inline-flex items-center justify-center w-8 h-8 bg-yellow-500 text-white rounded-full font-bold mr-3">3</span>
+                                輸送距離が短い
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed mb-3">
+                                国産レモンは輸送距離が短いため、長期保存のための防カビ処理が不要です。
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                海外からの輸入レモンは数週間から数ヶ月かけて輸送されるため、カビ防止処理が必須となります。
+                            </p>
+                        </div>
+
+                        <div class="bg-purple-50 rounded-xl p-6 border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center text-lg">
+                                <span class="inline-flex items-center justify-center w-8 h-8 bg-purple-500 text-white rounded-full font-bold mr-3">4</span>
+                                日本の農薬基準に準拠
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed mb-3">
+                                国内生産者は農薬適正使用に細心の注意を払っており、減農薬栽培を実施している生産者も多くいます。
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                日南レモン生産組合でも、徹底した記録管理のもと、安心・安全なレモンづくりに取り組んでいます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-6 bg-gradient-to-r from-green-100 to-blue-50 rounded-xl border-2 border-green-400">
+                        <div class="flex items-start">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-green-600 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">まとめ</h4>
+                                <p class="text-gray-700 leading-relaxed">
+                                    これらの理由から、日南レモンは皮ごと使用しても安全性が高いとされています。レモネードやはちみつ漬け、お菓子作りなど、皮まで丸ごと活用できるのが大きな魅力です。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('skin-safety-modal')" class="ios-button w-full">
                             閉じる
                         </button>
                     </div>
