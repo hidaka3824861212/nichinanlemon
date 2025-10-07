@@ -1003,7 +1003,7 @@
                     <div class="p-6">
                         <h4 class="font-inter font-semibold text-xl text-gray-900 mb-3">レモンケーキ</h4>
                         <p class="text-gray-600 mb-4">皮ごと使ったしっとりケーキ</p>
-                        <button onclick="openModal('recipe-modal')" class="text-warm-600 font-medium hover:text-warm-700">
+                        <button onclick="openModal('lemon-cake-recipe-modal')" class="text-warm-600 font-medium hover:text-warm-700">
                             レシピを見る →
                         </button>
                     </div>
@@ -1018,7 +1018,7 @@
                     <div class="p-6">
                         <h4 class="font-inter font-semibold text-xl text-gray-900 mb-3">レモンチキン</h4>
                         <p class="text-gray-600 mb-4">さっぱりとした味わいのメイン料理</p>
-                        <button onclick="openModal('recipe-modal')" class="text-warm-600 font-medium hover:text-warm-700">
+                        <button onclick="openModal('lemon-chicken-recipe-modal')" class="text-warm-600 font-medium hover:text-warm-700">
                             レシピを見る →
                         </button>
                     </div>
@@ -1529,6 +1529,202 @@
 
                     <div class="pt-4">
                         <button onclick="closeModal('recipe-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- レモンチキンレシピモーダル -->
+    <div id="lemon-chicken-recipe-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('lemon-chicken-recipe-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">日南レモンを使ったレモンチキンの代表的なレシピ</h3>
+                    <button onclick="closeModal('lemon-chicken-recipe-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <!-- 基本の日南レモングリルチキン -->
+                    <div class="bg-orange-50 p-6 rounded-xl">
+                        <h4 class="font-semibold text-xl text-gray-900 mb-4">基本の日南レモングリルチキン</h4>
+
+                        <div class="mb-4">
+                            <h5 class="font-semibold text-gray-900 mb-3">材料（2人分）</h5>
+                            <ul class="space-y-1 text-gray-600">
+                                <li>• 鶏もも肉: 2枚（約500g）</li>
+                                <li>• 日南レモン: 1個</li>
+                                <li>• オリーブオイル: 大さじ2</li>
+                                <li>• にんにく（すりおろし）: 1片分</li>
+                                <li>• 塩: 小さじ1/2</li>
+                                <li>• 黒こしょう: 少々</li>
+                                <li>• ハーブ（ローズマリー、タイム等）: お好みで</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h5 class="font-semibold text-gray-900 mb-3">作り方</h5>
+
+                            <div class="space-y-4">
+                                <!-- マリネ液を作る -->
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h6 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">1</span>
+                                        マリネ液を作る
+                                    </h6>
+                                    <p class="text-gray-600 text-sm ml-8">
+                                        ボウルにレモン果汁（1個分）、すりおろしたレモンの皮（1/2個分）、オリーブオイル、にんにく、塩、こしょう、ハーブを混ぜる
+                                    </p>
+                                </div>
+
+                                <!-- 漬け込む -->
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h6 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">2</span>
+                                        漬け込む
+                                    </h6>
+                                    <ul class="space-y-1 text-gray-600 text-sm ml-8">
+                                        <li>• 鶏もも肉を一口大に切る（または切らずにそのまま）</li>
+                                        <li>• マリネ液に30分〜1時間漬け込む</li>
+                                    </ul>
+                                </div>
+
+                                <!-- 焼く -->
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h6 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">3</span>
+                                        焼く
+                                    </h6>
+                                    <ol class="space-y-1 text-gray-600 text-sm ml-8 list-decimal">
+                                        <li>フライパンに油をひき、中火で皮目から焼く</li>
+                                        <li>皮目がこんがりしたら裏返し、弱火で中まで火を通す（約15分）</li>
+                                        <li>仕上げにレモンスライスを添える</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- まとめ -->
+                    <div class="bg-warm-100 p-4 rounded-lg text-center">
+                        <p class="text-gray-700 font-medium">
+                            <i data-lucide="chef-hat" class="w-4 h-4 inline text-warm-600 mr-1"></i>
+                            基本の日南レモングリルチキンが最も代表的で、日南レモンの爽やかな風味と皮まで使える安全性を存分に活かせるレシピです！
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('lemon-chicken-recipe-modal')" class="ios-button w-full">
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- レモンケーキレシピモーダル -->
+    <div id="lemon-cake-recipe-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop fixed inset-0" onclick="closeModal('lemon-cake-recipe-modal')"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="card-glass rounded-2xl p-8 w-full max-w-2xl transform transition-all modal-container max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900">日南レモンを使ったレモンケーキの代表的なレシピ</h3>
+                    <button onclick="closeModal('lemon-cake-recipe-modal')" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <!-- 基本の日南レモンパウンドケーキ -->
+                    <div class="bg-yellow-50 p-6 rounded-xl">
+                        <h4 class="font-semibold text-xl text-gray-900 mb-4">基本の日南レモンパウンドケーキ</h4>
+
+                        <div class="mb-4">
+                            <h5 class="font-semibold text-gray-900 mb-3">材料（18cmパウンド型1台分）</h5>
+                            <ul class="space-y-1 text-gray-600">
+                                <li>• 無塩バター: 100g</li>
+                                <li>• グラニュー糖: 100g</li>
+                                <li>• 卵: 2個</li>
+                                <li>• 薄力粉: 100g</li>
+                                <li>• ベーキングパウダー: 小さじ1/2</li>
+                                <li>• 日南レモン: 1個（果汁・皮）</li>
+                                <li>• レモン果汁: 大さじ2</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h5 class="font-semibold text-gray-900 mb-3">作り方</h5>
+
+                            <div class="space-y-4">
+                                <!-- 下準備 -->
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h6 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">1</span>
+                                        下準備
+                                    </h6>
+                                    <ul class="space-y-1 text-gray-600 text-sm ml-8">
+                                        <li>• バターと卵を室温に戻す</li>
+                                        <li>• 薄力粉とベーキングパウダーを合わせてふるう</li>
+                                        <li>• レモンの皮をすりおろす（黄色い部分のみ）</li>
+                                        <li>• オーブンを170℃に予熱</li>
+                                    </ul>
+                                </div>
+
+                                <!-- 生地作り -->
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h6 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">2</span>
+                                        生地作り
+                                    </h6>
+                                    <ol class="space-y-1 text-gray-600 text-sm ml-8 list-decimal">
+                                        <li>バターをクリーム状に練り、砂糖を加えて白っぽくなるまで混ぜる</li>
+                                        <li>溶いた卵を3回に分けて加え、よく混ぜる</li>
+                                        <li>レモンの皮、レモン果汁を加えて混ぜる</li>
+                                        <li>ふるった粉類を加え、さっくりと混ぜる</li>
+                                    </ol>
+                                </div>
+
+                                <!-- 焼成 -->
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h6 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="bg-warm-500 text-white text-xs px-2 py-1 rounded mr-2">3</span>
+                                        焼成
+                                    </h6>
+                                    <ol class="space-y-1 text-gray-600 text-sm ml-8 list-decimal">
+                                        <li>型に流し入れ、170℃で40〜45分焼く</li>
+                                        <li>竹串を刺して生地がつかなければOK</li>
+                                    </ol>
+                                </div>
+
+                                <!-- レモングレーズ -->
+                                <div class="bg-white p-4 rounded-lg border-2 border-warm-300">
+                                    <h6 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <i data-lucide="sparkles" class="w-4 h-4 text-warm-600 mr-2"></i>
+                                        レモングレーズ（お好みで）
+                                    </h6>
+                                    <ul class="space-y-1 text-gray-600 text-sm ml-6">
+                                        <li>• 粉糖50g + レモン果汁大さじ1を混ぜる</li>
+                                        <li>• 焼き上がった温かいケーキに塗る</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- まとめ -->
+                    <div class="bg-warm-100 p-4 rounded-lg text-center">
+                        <p class="text-gray-700 font-medium">
+                            <i data-lucide="heart" class="w-4 h-4 inline text-warm-600 mr-1"></i>
+                            日南レモンパウンドケーキが最も代表的で、皮まで安心して使える日南レモンの魅力を最大限に引き出せるレシピです！
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="closeModal('lemon-cake-recipe-modal')" class="ios-button w-full">
                             閉じる
                         </button>
                     </div>
