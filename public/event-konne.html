@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新宿KONNE館イベント開催 | 日南レモン生産組合</title>
+    <meta name="description" content="2025年10月25日(土)・26日(日)、新宿宮崎館KONNEにて日南レモンの試食・販売イベントを開催。生産者が直接、こだわりと楽しみ方をご紹介します。">
+    <meta name="keywords" content="日南レモン,新宿KONNE,イベント,試食,販売,宮崎,マイヤーレモン">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="新宿KONNE館イベント開催 | 日南レモン生産組合">
+    <meta property="og:description" content="2025年10月25日(土)・26日(日)、新宿宮崎館KONNEにて日南レモンの試食・販売イベントを開催">
+    <meta property="og:image" content="https://nichinanlemon.jp/assets/images/GreenLemon001.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon001.png" type="image/png">
+    <link rel="icon" href="assets/images/favicon001.png" sizes="any">
+    <link rel="apple-touch-icon" href="assets/images/favicon001.png">
+    <meta name="msapplication-TileColor" content="#FEF3C7">
+    <meta name="theme-color" content="#FACC15">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS v4.1 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                        'noto': ['Noto Sans JP', 'sans-serif']
+                    },
+                    colors: {
+                        'warm': {
+                            50: '#fff8f1',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12'
+                        },
+                        'lemon': {
+                            50: '#fffdf0',
+                            100: '#fffce1',
+                            200: '#fff7c7',
+                            300: '#ffeb9e',
+                            400: '#ffdb6b',
+                            500: '#ffc832',
+                            600: '#eab308',
+                            700: '#ca8a04',
+                            800: '#a16207',
+                            900: '#854d0e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Animate.css v4.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- AOS v2.3 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Lucide v0.536.0 -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        /* カスタムスタイル */
+        .nav-glass {
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-transparent {
+            background-color: transparent;
+            border-bottom: none;
+        }
+
+        .card-glass {
+            backdrop-filter: blur(16px);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #eab308 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .event-badge {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .countdown-item {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+        }
+    </style>
+</head>
+<body class="font-noto bg-gradient-to-br from-warm-50 via-lemon-50 to-warm-100">
+
+    <!-- ナビゲーション -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 nav-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- ロゴ -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="assets/images/Header001.png" alt="日南レモン生産組合ロゴ" class="h-10 w-auto">
+                    <span class="font-inter font-bold text-xl text-gray-900">日南レモン生産組合</span>
+                </a>
+
+                <!-- デスクトップメニュー -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-warm-600 transition-colors font-medium">ホーム</a>
+                    <a href="index.html#products" class="text-gray-700 hover:text-warm-600 transition-colors font-medium">商品</a>
+                    <a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 bg-gradient-to-r from-lemon-500 to-warm-500 text-white font-semibold rounded-full hover:shadow-lg transition-all">
+                        オンラインショップ
+                    </a>
+                </div>
+
+                <!-- モバイルメニューボタン -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-3 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">ホーム</a>
+                <a href="index.html#products" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">商品</a>
+                <a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 bg-gradient-to-r from-lemon-500 to-warm-500 text-white text-center rounded-lg">オンラインショップ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- 背景画像 -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/GreenLemon001.jpg" alt="日南レモン畑" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-warm-50/50 to-warm-50"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- イベントバッジ -->
+            <div class="inline-flex items-center space-x-2 bg-red-600 text-white px-6 py-3 rounded-full mb-8 event-badge" data-aos="zoom-in">
+                <i data-lucide="calendar" class="w-5 h-5"></i>
+                <span class="font-bold text-sm tracking-wider">期間限定イベント開催</span>
+            </div>
+
+            <!-- メインタイトル -->
+            <h1 class="font-inter font-black text-5xl sm:text-6xl lg:text-7xl mb-6 leading-tight" data-aos="fade-up">
+                <span class="gradient-text">レモンの旬は今かいやど〜</span>
+            </h1>
+
+            <p class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-8" data-aos="fade-up" data-aos-delay="100">
+                宮崎の日南レモン、<br class="sm:hidden">食べにこんね！
+            </p>
+
+            <!-- 日程情報 -->
+            <div class="inline-block card-glass rounded-3xl px-10 py-8 mb-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+                    <div class="text-center">
+                        <div class="text-6xl font-black text-lemon-600 mb-2">10.25</div>
+                        <div class="text-lg font-semibold text-gray-700">土曜日</div>
+                        <div class="text-sm text-gray-600">10:00 - 17:00</div>
+                    </div>
+                    <div class="hidden sm:block text-4xl text-gray-400">-</div>
+                    <div class="text-center">
+                        <div class="text-6xl font-black text-lemon-600 mb-2">10.26</div>
+                        <div class="text-lg font-semibold text-gray-700">日曜日</div>
+                        <div class="text-sm text-gray-600">10:00 - 15:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 会場情報 -->
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <i data-lucide="map-pin" class="w-6 h-6 text-warm-600"></i>
+                    <p class="text-xl sm:text-2xl font-bold text-gray-900">新宿宮崎館 KONNE</p>
+                </div>
+                <p class="text-gray-700 text-lg">東京都渋谷区代々木2-2-1 新宿サザンテラス内</p>
+            </div>
+
+            <!-- CTAボタン -->
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6" data-aos="fade-up" data-aos-delay="400">
+                <a href="#access" class="px-10 py-4 bg-gradient-to-r from-lemon-500 to-warm-500 text-white font-bold text-lg rounded-full hover:shadow-2xl transition-all transform hover:scale-105">
+                    会場アクセス
+                </a>
+                <a href="https://www.konne.jp/" target="_blank" rel="noopener noreferrer" class="px-10 py-4 bg-white text-gray-900 font-bold text-lg rounded-full border-2 border-gray-300 hover:border-lemon-500 hover:shadow-xl transition-all">
+                    KONNE公式サイト
+                </a>
+            </div>
+
+            <!-- スクロールダウン -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2" data-aos="fade-up" data-aos-delay="500">
+                <div class="flex flex-col items-center space-y-2">
+                    <span class="text-sm text-gray-600 font-medium">Scroll Down</span>
+                    <i data-lucide="chevron-down" class="w-6 h-6 text-gray-600 animate-bounce"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- イベント概要セクション -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    STORY & TASTING
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    日南から"とれたて"のレモンをお届けします。<br>
+                    生産者が宮崎KONNE館にうかがい、こだわりや楽しみ方をご紹介。<br>
+                    試食をご用意していますので、まずは味と魅力をたしかめに来てください。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 試食体験 -->
+                <div class="card-glass rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-lemon-400 to-warm-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="utensils" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="font-inter font-bold text-2xl text-gray-900 mb-4">試食体験</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        採れたての日南レモンを<br>その場で試食できます。<br>まろやかな酸味を<br>ぜひご体験ください。
+                    </p>
+                </div>
+
+                <!-- 生産者の話 -->
+                <div class="card-glass rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-lemon-400 to-warm-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="font-inter font-bold text-2xl text-gray-900 mb-4">生産者の話</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        栽培へのこだわりや<br>日南レモンの魅力を<br>生産者が直接<br>ご説明いたします。
+                    </p>
+                </div>
+
+                <!-- 特産品販売 -->
+                <div class="card-glass rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-lemon-400 to-warm-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="shopping-bag" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="font-inter font-bold text-2xl text-gray-900 mb-4">特産品販売</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        日南レモンをはじめ、<br>宮崎・日南市の<br>地元特産品を<br>販売いたします。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 日南レモンの特徴 -->
+    <section class="py-24 bg-gradient-to-br from-warm-50 to-lemon-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    日南で育まれた<br class="sm:hidden">まろやかな酸味のレモン
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto mb-8"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- 画像 -->
+                <div class="order-2 lg:order-1" data-aos="fade-right">
+                    <img src="assets/images/GreenLemon001.jpg" alt="日南レモン" class="w-full rounded-3xl shadow-2xl" loading="lazy" decoding="async">
+                </div>
+
+                <!-- テキスト -->
+                <div class="order-1 lg:order-2" data-aos="fade-left">
+                    <h3 class="font-inter font-bold text-3xl text-gray-900 mb-6">太陽の恵み「ひなたのチカラ」</h3>
+                    <div class="space-y-4 text-gray-700 leading-relaxed text-lg">
+                        <p>
+                            宮崎県日南市の温暖な気候と豊かな自然環境で育った「マイヤーレモン」。皮まで安心して食べられる安全性と、まろやかな酸味とフルーティーな香りが特徴です。
+                        </p>
+                        <p>
+                            減農薬栽培にこだわり、太陽の恵みをたっぷり受けて育ったレモンは、他では味わえない特別な美味しさです。
+                        </p>
+                    </div>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-lemon-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="sun" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-gray-900 mb-2">豊富な日照</h4>
+                                <p class="text-gray-600">宮崎の温暖な気候がレモンの甘みと酸味を引き出します</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-lemon-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="leaf" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-gray-900 mb-2">減農薬栽培</h4>
+                                <p class="text-gray-600">皮まで安心して食べられる安全なレモン作り</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-lemon-400 rounded-full flex items-center justify-center">
+                                <i data-lucide="heart" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-gray-900 mb-2">生産者の愛情</h4>
+                                <p class="text-gray-600">一つ一つ丁寧に育てた、こだわりのレモン</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- イベント詳細スケジュール -->
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    開催スケジュール
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto"></div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- 10月25日（土） -->
+                <div class="card-glass rounded-2xl p-8" data-aos="fade-up">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="bg-lemon-500 text-white px-6 py-3 rounded-xl font-bold text-lg">
+                            10月25日（土）
+                        </div>
+                        <div class="text-2xl font-bold text-gray-900">10:00 - 17:00</div>
+                    </div>
+                    <div class="space-y-3 text-gray-700">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-lemon-600"></i>
+                            <span>日南レモンの試食・販売</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-lemon-600"></i>
+                            <span>生産者によるこだわり紹介</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-lemon-600"></i>
+                            <span>日南市特産品の展示・販売</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10月26日（日） -->
+                <div class="card-glass rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="bg-warm-500 text-white px-6 py-3 rounded-xl font-bold text-lg">
+                            10月26日（日）
+                        </div>
+                        <div class="text-2xl font-bold text-gray-900">10:00 - 15:00</div>
+                    </div>
+                    <div class="space-y-3 text-gray-700">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-warm-600"></i>
+                            <span>日南レモンの試食・販売</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-warm-600"></i>
+                            <span>生産者によるこだわり紹介</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-warm-600"></i>
+                            <span>日南市特産品の展示・販売</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 card-glass rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center justify-center space-x-3 text-gray-700">
+                    <i data-lucide="info" class="w-5 h-5 text-warm-600"></i>
+                    <p class="text-lg">入場無料・予約不要</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセス情報 -->
+    <section id="access" class="py-24 bg-gradient-to-br from-warm-50 to-lemon-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-inter font-bold text-4xl sm:text-5xl text-gray-900 mb-6">
+                    アクセス
+                </h2>
+                <div class="w-24 h-1 bg-warm-400 mx-auto"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- 会場情報 -->
+                <div class="card-glass rounded-2xl p-8" data-aos="fade-right">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900 mb-6">会場情報</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i data-lucide="building" class="w-5 h-5 text-warm-600"></i>
+                                <h4 class="font-bold text-lg text-gray-900">新宿宮崎館 KONNE</h4>
+                            </div>
+                            <p class="text-gray-600 ml-8">東京都渋谷区代々木2-2-1<br>新宿サザンテラス内</p>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i data-lucide="train" class="w-5 h-5 text-warm-600"></i>
+                                <h4 class="font-bold text-lg text-gray-900">電車でお越しの方</h4>
+                            </div>
+                            <div class="text-gray-600 ml-8 space-y-2">
+                                <p>・JR「新宿駅」南口より徒歩3分</p>
+                                <p>・小田急線「新宿駅」より徒歩5分</p>
+                                <p>・都営新宿線・大江戸線「新宿駅」より徒歩5分</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i data-lucide="car" class="w-5 h-5 text-warm-600"></i>
+                                <h4 class="font-bold text-lg text-gray-900">お車でお越しの方</h4>
+                            </div>
+                            <p class="text-gray-600 ml-8">近隣の有料駐車場をご利用ください</p>
+                        </div>
+
+                        <div class="pt-4">
+                            <a href="https://www.konne.jp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-warm-600 hover:text-warm-700 font-semibold">
+                                <span>KONNE公式サイトで詳細を見る</span>
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 地図 -->
+                <div class="card-glass rounded-2xl p-8" data-aos="fade-left">
+                    <h3 class="font-inter font-bold text-2xl text-gray-900 mb-6">地図</h3>
+                    <div class="aspect-w-16 aspect-h-12 bg-gray-200 rounded-xl overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8277542562684!2d139.69893731525805!3d35.68380398019516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd0c0d5f0e9%3A0x3e0b3b3b3b3b3b3b!2z5paw5a6_5a6u5bSO6aSoS09OTkU!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp"
+                            width="100%"
+                            height="400"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-xl">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主催者情報 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div data-aos="fade-up">
+                <h2 class="font-inter font-bold text-3xl text-gray-900 mb-6">主催</h2>
+                <div class="card-glass rounded-2xl p-8 inline-block">
+                    <p class="text-2xl font-bold text-gray-900 mb-2">下塚田ふるさと応援隊</p>
+                    <p class="text-lg text-gray-600">宮崎県日南市</p>
+                </div>
+            </div>
+
+            <div class="mt-16" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="font-inter font-bold text-2xl text-gray-900 mb-8">SNSからも情報をご確認いただけます</h3>
+                <div class="flex items-center justify-center space-x-6">
+                    <a href="https://www.instagram.com/nichinanlemon/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-gradient-to-br from-pink-500 to-yellow-500 rounded-full flex items-center justify-center hover:shadow-xl transition-all transform hover:scale-110">
+                        <i data-lucide="instagram" class="w-7 h-7 text-white"></i>
+                    </a>
+                    <a href="https://www.facebook.com/nichinanlemon/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center hover:shadow-xl transition-all transform hover:scale-110">
+                        <i data-lucide="facebook" class="w-7 h-7 text-white"></i>
+                    </a>
+                    <a href="index.html" class="w-14 h-14 bg-lemon-500 rounded-full flex items-center justify-center hover:shadow-xl transition-all transform hover:scale-110">
+                        <i data-lucide="home" class="w-7 h-7 text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section class="py-24 bg-gradient-to-r from-lemon-500 via-warm-500 to-lemon-600">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div data-aos="zoom-in">
+                <h2 class="font-inter font-black text-4xl sm:text-5xl text-white mb-6">
+                    皆さまのご来場を<br class="sm:hidden">お待ちしております
+                </h2>
+                <p class="text-xl text-white/90 mb-10 leading-relaxed">
+                    日南レモンの魅力を直接体験できる絶好の機会です。<br>
+                    生産者との交流もお楽しみください。
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="px-10 py-4 bg-white text-gray-900 font-bold text-lg rounded-full hover:shadow-2xl transition-all transform hover:scale-105">
+                        オンラインショップ
+                    </a>
+                    <a href="index.html" class="px-10 py-4 bg-transparent text-white font-bold text-lg rounded-full border-2 border-white hover:bg-white hover:text-gray-900 transition-all">
+                        ホームに戻る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- 会社情報 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="assets/images/Header001.png" alt="日南レモン生産組合ロゴ" class="w-12 h-8">
+                        <span class="font-inter font-bold text-lg">日南レモン生産組合</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        太陽の恵み「ひなたのチカラ」で育てられた日南レモン。皮まで安心して食べられる特別なマイヤーレモンをお届けします。
+                    </p>
+                </div>
+
+                <!-- リンク -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">リンク</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-gray-300 hover:text-lemon-400 transition-colors">ホーム</a></li>
+                        <li><a href="index.html#products" class="text-gray-300 hover:text-lemon-400 transition-colors">商品ラインナップ</a></li>
+                        <li><a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-lemon-400 transition-colors">オンラインショップ</a></li>
+                        <li><a href="https://www.konne.jp/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-lemon-400 transition-colors">新宿宮崎館KONNE</a></li>
+                    </ul>
+                </div>
+
+                <!-- お問い合わせ -->
+                <div>
+                    <h3 class="font-inter font-semibold text-lg mb-4">お問い合わせ</h3>
+                    <div class="space-y-3 text-sm text-gray-300">
+                        <div class="flex items-start space-x-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-1 flex-shrink-0"></i>
+                            <p>〒889-3155<br>宮崎県日南市大字塚田乙262番地</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="w-4 h-4 flex-shrink-0"></i>
+                            <a href="mailto:zimukyoku@nichinanlemon.jp" class="hover:text-lemon-400 transition-colors">zimukyoku@nichinanlemon.jp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 日南レモン生産組合. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- スクロールトップボタン -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 bg-lemon-500 text-white p-3 rounded-full shadow-lg hover:bg-lemon-600 transition-all z-40 opacity-0 pointer-events-none">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS初期化
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Lucideアイコン初期化
+        lucide.createIcons();
+
+        // ナビゲーションスクロール処理
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.classList.remove('nav-transparent');
+                navbar.classList.add('nav-glass');
+            } else {
+                navbar.classList.add('nav-transparent');
+                navbar.classList.remove('nav-glass');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // モバイルメニュー
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // スクロールトップボタン
+        const scrollTopBtn = document.getElementById('scroll-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

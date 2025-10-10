@@ -299,6 +299,35 @@
             }
         }
 
+        /* イベントバナーアニメーション */
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(220, 38, 38, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(220, 38, 38, 0.7), 0 0 60px rgba(220, 38, 38, 0.5);
+            }
+        }
+
+        .event-banner {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .event-badge-animate {
+            animation: slide-in 0.6s ease-out;
+        }
+
         /* 全画像にスケールアニメーション適用（2秒） */
         img.product-image,
         img.responsive-image,
@@ -458,6 +487,34 @@
                 宮崎県日南市の温暖な気候と豊かな自然環境で育った<br class="hidden sm:block">特別なマイヤーレモンをお届けします
             </p>
 
+            <!-- イベントバナー -->
+            <div class="mb-12 animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="event-konne.html" class="inline-block event-banner rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105">
+                    <div class="bg-gradient-to-r from-red-600 via-red-500 to-orange-500 px-8 py-6 sm:px-12 sm:py-8">
+                        <div class="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-white rounded-full p-2">
+                                    <i data-lucide="calendar" class="w-6 h-6 sm:w-8 sm:h-8 text-red-600"></i>
+                                </div>
+                                <div class="text-left">
+                                    <div class="text-white text-xs sm:text-sm font-semibold tracking-wider">期間限定イベント</div>
+                                    <div class="text-white text-lg sm:text-2xl font-black">10月25日(土)・26日(日)</div>
+                                </div>
+                            </div>
+                            <div class="hidden sm:block h-12 w-px bg-white/30"></div>
+                            <div class="text-center sm:text-left">
+                                <div class="text-white text-base sm:text-xl font-bold mb-1">新宿KONNE館で試食・販売会</div>
+                                <div class="text-white/90 text-sm">生産者が直接ご紹介します</div>
+                            </div>
+                            <div class="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full">
+                                <span class="text-white font-semibold text-sm">詳細を見る</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
             <div class="flex flex-col sm:flex-row gap-6 justify-center animate__animated animate__fadeInUp animate__delay-2s">
                 <a href="https://nichinanlemon.stores.jp/" target="_blank" rel="noopener noreferrer" class="ios-button text-lg px-8 py-4 shadow-xl text-center">
                     オンラインショップ
@@ -588,8 +645,33 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- News Item 1 -->
+                <!-- News Item 1 - KONNEイベント -->
                 <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="assets/images/GreenLemon001.jpg"
+                             alt="新宿KONNE館イベント"
+                             class="w-full h-48 object-cover news-image"
+                             loading="lazy"
+                             decoding="async">
+                        <div class="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                            イベント
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>2025年10月25日〜26日</span>
+                        </div>
+                        <h4 class="font-inter font-semibold text-xl text-gray-900 mb-3">新宿KONNE館でイベント開催</h4>
+                        <p class="text-gray-600 mb-4">生産者が直接、日南レモンの魅力をご紹介。試食・販売会を開催します。</p>
+                        <a href="event-konne.html" class="text-warm-600 font-medium hover:text-warm-700">
+                            詳しく見る →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative">
                         <img src="assets/images/GreenLemon004.jpg"
                              alt="グリーンレモン収穫シーズン"
@@ -613,8 +695,8 @@
                     </div>
                 </div>
 
-                <!-- News Item 2 -->
-                <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <!-- News Item 3 -->
+                <div class="card-glass rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                     <div class="relative">
                         <img src="assets/images/onlineshop001.jpg"
                              alt="オンラインショップ開店"
