@@ -1,6 +1,6 @@
 # Claude1page
 
-Claude Code を使って、シンプルで、モダンで、美しい、ワンページで完結するWebページを作るためのスターターキットです。Netlifyで簡単に公開できるように設計されています。
+Claude Code を使って、シンプルで、モダンで、美しい、ワンページで完結するWebページを作るためのスターターキットです。Cloudflare Pagesで簡単に公開できるように設計されています。
 
 ## 必要なもの
 
@@ -90,7 +90,7 @@ Claude Code を使って、シンプルで、モダンで、美しい、ワン�
 
 ```
 webpage-template-for-cc/
-├── public/              # Netlify公開用ディレクトリ
+├── public/              # Cloudflare Pages公開用ディレクトリ
 │   ├── index.html      # メインページ
 │   └── assets/         # CSS、JS、画像などの静的ファイル
 ├── project-docs/       # プロジェクト関連ドキュメント
@@ -103,12 +103,26 @@ webpage-template-for-cc/
 └── README.md          # このファイル
 ```
 
-## Netlifyでの公開
+## Cloudflare Pagesでの公開
 
-1. Netlifyにログイン
-2. 「New site from Git」を選択
-3. このリポジトリを選択
-4. Publish directory を `public` に設定
-5. Deploy
+### Gitリポジトリからデプロイする場合
+
+1. Cloudflare Dashboardにログイン
+2. 「Workers & Pages」セクションへ移動
+3. 「Create application」→「Pages」→「Connect to Git」を選択
+4. このリポジトリを選択
+5. ビルド設定を行う：
+   - **Build command**: (空欄のまま)
+   - **Build output directory**: `public`
+6. 「Save and Deploy」をクリック
+
+### 直接アップロードする場合
+
+1. Cloudflare Dashboardにログイン
+2. 「Workers & Pages」セクションへ移動
+3. 「Create application」→「Pages」→「Upload assets」を選択
+4. プロジェクト名を入力
+5. `public` ディレクトリ内のファイルをドラッグ&ドロップ
+6. 「Deploy site」をクリック
 
 これで、あなたの美しいワンページWebサイトが公開されます！
