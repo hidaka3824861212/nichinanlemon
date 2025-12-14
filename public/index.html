@@ -779,11 +779,19 @@
             <div class="grid md:grid-cols-2 gap-12 mb-16">
                 <!-- グリーンレモン -->
                 <div class="card-glass rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/images/GreenLemon004.jpg"
-                         alt="日南の新鮮なグリーンレモン - 手のひらに収まる美しい緑色の果実"
-                         class="product-image mb-8"
-                         loading="lazy"
-                         decoding="async">
+                    <div class="relative mb-8">
+                        <img src="assets/images/GreenLemon004.jpg"
+                             alt="日南の新鮮なグリーンレモン - 手のひらに収まる美しい緑色の果実"
+                             class="product-image"
+                             loading="lazy"
+                             decoding="async">
+                        <!-- 販売終了バッジ（画像上） -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-2xl">
+                            <div class="bg-gray-600 text-white px-8 py-4 rounded-xl font-bold text-2xl shadow-2xl">
+                                販売終了
+                            </div>
+                        </div>
+                    </div>
                     <div class="flex items-center mb-4">
                         <h3 class="font-inter font-bold text-2xl text-gray-900">グリーンレモン</h3>
                     </div>
