@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin=""/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; }
+        #map { width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin=""></script>
+    <script>
+    (function() {
+        var map = L.map('map', { scrollWheelZoom: false }).setView([31.574850, 131.325925], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            subdomains: 'abc',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        function makeDivIcon(color, label) {
+            return L.divIcon({
+                className: '',
+                html: '<div style="position:relative;text-align:center;">'
+                    + '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="40" viewBox="0 0 28 40">'
+                    + '<path d="M14 0C6.27 0 0 6.27 0 14c0 10.5 14 26 14 26S28 24.5 28 14C28 6.27 21.73 0 14 0z" fill="' + color + '" stroke="white" stroke-width="2"/>'
+                    + '<circle cx="14" cy="14" r="5" fill="white"/>'
+                    + '</svg>'
+                    + '<div style="position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(255,255,255,0.92);border:1px solid #ccc;border-radius:4px;padding:1px 5px;font-size:11px;font-weight:bold;color:#333;pointer-events:none;">' + label + '</div>'
+                    + '</div>',
+                iconSize: [28, 58],
+                iconAnchor: [14, 40],
+                popupAnchor: [0, -42]
+            });
+        }
+
+        // 下塚田公民館（赤ピン）
+        L.marker([31.577993, 131.326280], {icon: makeDivIcon('#e53e3e', '下塚田公民館')})
+            .addTo(map)
+            .bindPopup('<b>🏛 下塚田公民館</b><br>宮崎県日南市大字塚田乙716番地')
+            .openPopup();
+
+        // 下塚田ふるさと応援隊（青ピン）
+        L.marker([31.571706, 131.325569], {icon: makeDivIcon('#3b82f6', '下塚田ふるさと応援隊<br>日南レモン生産組合')})
+            .addTo(map)
+            .bindPopup('<b>🏠 下塚田ふるさと応援隊</b><br>日南レモン生産組合<br>〒889-3155 宮崎県日南市大字塚田乙2909番地');
+    })();
+    </script>
+</body>
+</html>
